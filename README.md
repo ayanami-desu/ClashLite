@@ -23,7 +23,7 @@ No main window, no Dock icon, just a menu bar icon.
 - **Profile validation**: importing, editing, or updating a profile, and saving an override, all run a full validation with the core (`mihomo -t`) first, so a broken profile is never applied
 - **Overrides**: "profile overrides" (apply to a single profile) and a "global override" (applies to all profiles), deep-merged as YAML
 - **Menu bar shortcuts**: switch proxy mode (Rule / Global / Direct), switch proxies in proxy groups (with latency), unpin, close all connections, restart the core
-- **TUN mode**: authorize only once; DNS is automatically switched to fake-ip mode when enabled
+- **TUN mode**: authorize only once; DNS is automatically switched to fake-ip mode when enabled, and a LAN DNS server is replaced with a public one so queries enter the tunnel
 - **Dashboard sync**: changing the mode or switching proxies in the dashboard is synced back to the menu bar and kept across core restarts
 - **Launch at login**
 - **Multilingual**: English, Simplified Chinese, Traditional Chinese, and Russian, following the system language
@@ -141,6 +141,10 @@ For example, to make custom rules take precedence over the subscription's rules:
 ### TUN mode
 
 Creating a virtual network interface requires root. The first time you enable it, ClashLite shows the system administrator authorization dialog, makes the core file owned by root and sets the setuid bit, after which no further authorization is needed. Replacing the core file drops these permissions, and you'll be asked again.
+
+macOS cannot intercept DNS queries sent to a LAN DNS server through the TUN interface. When TUN is on and the current network service uses a LAN, loopback, or link-local DNS server, ClashLite removes those servers so the queries enter the tunnel; existing public DNS servers are kept, and 223.5.5.5 and 119.29.29.29 are used when none remain. The original settings are restored when TUN is turned off, the core stops, or ClashLite quits. This is controlled by the "Take Over System DNS" menu item and is on by default.
+
+Apps that send DNS queries directly to a hardcoded LAN server are not affected. While TUN is on, split DNS and internal domains resolved only by the LAN DNS may stop working; turn off "Take Over System DNS" in that case.
 
 ### File locations
 

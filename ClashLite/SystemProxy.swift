@@ -53,10 +53,16 @@ nonisolated enum SystemProxy {
         storedBackup()?.service
     }
 
-    /// 当前主网络服务的名称，即系统设置中显示的名称（如 Wi-Fi）
+    /// 当前主网络服务的名称，即系统设置中显示的名称（如 Wi-Fi）。
+    /// 优先 IPv4；IPv6-only 网络下回退到 IPv6 的主服务。
     static var activeServiceName: String? {
-        guard let store = SCDynamicStoreCreate(nil, "ClashLite" as CFString, nil, nil),
-              let primary = SCDynamicStoreCopyValue(store, "State:/Network/Global/IPv4" as CFString) as? [String: Any],
+        guard let store = SCDynamicStoreCreate(nil, "ClashLite" as CFString, nil, nil) else { return nil }
+        return serviceName(in: store, key: "State:/Network/Global/IPv4")
+            ?? serviceName(in: store, key: "State:/Network/Global/IPv6")
+    }
+
+    private static func serviceName(in store: SCDynamicStore, key: String) -> String? {
+        guard let primary = SCDynamicStoreCopyValue(store, key as CFString) as? [String: Any],
               let id = primary["PrimaryService"] as? String,
               let service = SCDynamicStoreCopyValue(store, "Setup:/Network/Service/\(id)" as CFString) as? [String: Any],
               let name = service["UserDefinedName"] as? String,
@@ -170,28 +176,13 @@ nonisolated enum SystemProxy {
 
     @discardableResult
     private static func run(_ arguments: [String]) throws -> String {
-        let process = Process()
-        process.executableURL = URL(filePath: "/usr/sbin/networksetup")
-        process.arguments = arguments
-        let output = Pipe()
-        let errors = Pipe()
-        process.standardOutput = output
-        process.standardError = errors
-
         do {
-            try process.run()
+            return try Networksetup.run(arguments)
+        } catch NetworksetupError.commandFailed(let message) {
+            throw SystemProxyError.commandFailed(message)
         } catch {
             throw SystemProxyError.commandFailed(error.localizedDescription)
         }
-
-        let data = output.fileHandleForReading.readDataToEndOfFile()
-        let errorData = errors.fileHandleForReading.readDataToEndOfFile()
-        process.waitUntilExit()
-        guard process.terminationStatus == 0 else {
-            let message = String(decoding: errorData, as: UTF8.self).trimmingCharacters(in: .whitespacesAndNewlines)
-            throw SystemProxyError.commandFailed(message)
-        }
-        return String(decoding: data, as: UTF8.self)
     }
 
     private static func storedBackup() -> Backup? {

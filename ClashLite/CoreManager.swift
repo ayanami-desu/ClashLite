@@ -63,6 +63,13 @@ final class CoreManager {
         }
     }
 
+    /// 是否在 TUN 开启时接管系统 DNS，通过 setSystemDNSEnabled(_:) 修改
+    private(set) var isSystemDNSEnabled: Bool {
+        didSet {
+            UserDefaults.standard.set(isSystemDNSEnabled, forKey: Self.systemDNSKey)
+        }
+    }
+
     /// 内核正在使用的配置，即最近一次成功传入内核的内容
     private(set) var runtimeConfig: String?
 
@@ -92,6 +99,12 @@ final class CoreManager {
     /// 内核最近一次加载配置时的系统 DNS 服务器
     @ObservationIgnored private var loadedDNSServers: [String] = []
     @ObservationIgnored private var dnsChangeTask: Task<Void, Never>?
+    /// 已接管的系统 DNS；服务不变时不再重复读写
+    @ObservationIgnored private var appliedSystemDNS: SystemDNS.Applied?
+    /// 自己写入 DNS 后 monitor 读到的值，用于避免触发内核重载
+    @ObservationIgnored private var expectedDNSServers: [String]?
+    /// 当前内核进程是否以 root 运行；setuid 只对新启动的进程生效
+    @ObservationIgnored private var isCorePrivileged = false
     /// 内核报告的代理端口，混合端口同时服务 HTTP 和 SOCKS
     @ObservationIgnored private var proxyPorts: ProxyPorts?
     /// 已写入系统代理的端口，端口不变时不再重复设置
@@ -100,6 +113,7 @@ final class CoreManager {
     @ObservationIgnored private static let modeKey = "proxyMode"
     @ObservationIgnored private static let tunKey = "tunEnabled"
     @ObservationIgnored private static let systemProxyKey = "systemProxyEnabled"
+    @ObservationIgnored private static let systemDNSKey = "systemDNSEnabled"
 
     private struct ProxyPorts: Equatable {
         var http: Int?
@@ -114,6 +128,8 @@ final class CoreManager {
         mode = UserDefaults.standard.string(forKey: Self.modeKey).flatMap(ProxyMode.init) ?? .rule
         isTunEnabled = UserDefaults.standard.bool(forKey: Self.tunKey)
         isSystemProxyEnabled = UserDefaults.standard.bool(forKey: Self.systemProxyKey)
+        // 默认开启，老用户升级后也直接生效
+        isSystemDNSEnabled = UserDefaults.standard.object(forKey: Self.systemDNSKey) as? Bool ?? true
 
         Notifier.setUp()
 
@@ -126,6 +142,7 @@ final class CoreManager {
                 self?.process?.terminate()
                 // 异步恢复可能来不及执行，退出前同步完成
                 SystemProxy.restoreIfNeeded()
+                SystemDNS.restoreIfNeeded()
             }
         }
 
@@ -136,6 +153,11 @@ final class CoreManager {
         // 上次异常退出可能遗留了未恢复的系统代理
         if !isSystemProxyEnabled, SystemProxy.hasBackup {
             enqueue { await self.restoreSystemProxy() }
+        }
+
+        // 上次异常退出可能遗留了未恢复的系统 DNS
+        if SystemDNS.hasBackup {
+            enqueue { await self.restoreSystemDNS() }
         }
 
         observeSelection(of: profileStore)
@@ -160,8 +182,20 @@ final class CoreManager {
         guard enabled != isTunEnabled else { return }
         isTunEnabled = enabled
         enqueue {
-            guard await self.ensureTunPermission() else { return }
-            await self.apply()
+            guard await self.ensureTunPermission() else {
+                await self.restoreSystemDNS()
+                return
+            }
+            // setuid 只对新进程生效，授权前启动的内核仍是普通用户，必须重启
+            let applied: Bool
+            if enabled, self.status == .running, !self.isCorePrivileged {
+                applied = await self.start()
+            } else {
+                applied = await self.apply()
+            }
+            if !applied {
+                await self.restoreSystemDNS()
+            }
         }
     }
 
@@ -174,6 +208,19 @@ final class CoreManager {
                 await self.syncProxySettings()
             } else {
                 await self.restoreSystemProxy()
+            }
+        }
+    }
+
+    /// TUN 开启时接管系统 DNS，关闭开关时立即恢复
+    func setSystemDNSEnabled(_ enabled: Bool) {
+        guard enabled != isSystemDNSEnabled else { return }
+        isSystemDNSEnabled = enabled
+        enqueue {
+            if enabled {
+                await self.syncSystemDNS()
+            } else {
+                await self.restoreSystemDNS()
             }
         }
     }
@@ -320,6 +367,7 @@ final class CoreManager {
         await syncConfigs()
         await refreshProxies()
         await applySystemProxy(notifyOnFailure: false)
+        await syncSystemDNS(notifyOnFailure: false)
     }
 
     private func syncConfigs() async {
@@ -378,6 +426,12 @@ final class CoreManager {
     private func reloadIfDNSChanged() async {
         let servers = dnsMonitor?.servers ?? []
         guard status == .running, !servers.isEmpty, servers != loadedDNSServers else { return }
+        // 自己接管或恢复 DNS 引起的变化不应重载内核
+        if servers == expectedDNSServers {
+            expectedDNSServers = nil
+            loadedDNSServers = servers
+            return
+        }
         NSLog("系统 DNS 变为 \(servers)，重载内核配置")
         await apply()
     }
@@ -417,11 +471,49 @@ final class CoreManager {
         }
     }
 
-    /// 内核运行中则热重载，否则启动
-    private func apply() async {
-        guard status == .running, let profileURL else {
-            await start()
+    /// TUN 开启且开关打开时接管系统 DNS，否则恢复
+    private func syncSystemDNS(notifyOnFailure: Bool = true) async {
+        guard isSystemDNSEnabled, isTunEnabled, status == .running else {
+            await restoreSystemDNS(notifyOnFailure: notifyOnFailure)
             return
+        }
+        guard let service = SystemProxy.activeServiceName else { return }
+        // 服务不变时不再重复读写，避免定时同步反复修改系统设置
+        guard appliedSystemDNS?.service != service else { return }
+
+        do {
+            let applied = try await SystemDNS.enable()
+            appliedSystemDNS = applied
+            // 自己写入会触发 SystemDNSMonitor，先记下期望值避免重载内核
+            expectedDNSServers = applied.changed ? applied.servers : nil
+            loadedDNSServers = applied.servers
+        } catch {
+            NSLog("设置系统 DNS 失败：\(error)")
+            guard notifyOnFailure else { return }
+            Notifier.post(id: "systemDNS", title: "Failed to Set System DNS", body: error.localizedDescription)
+        }
+    }
+
+    /// 恢复接管前的 DNS；用户手动改过时不会覆盖
+    private func restoreSystemDNS(notifyOnFailure: Bool = true) async {
+        guard appliedSystemDNS != nil || SystemDNS.hasBackup else { return }
+        appliedSystemDNS = nil
+        do {
+            let restored = try await SystemDNS.disable()
+            expectedDNSServers = restored?.isEmpty == false ? restored : nil
+            loadedDNSServers = dnsMonitor?.servers ?? []
+        } catch {
+            NSLog("恢复系统 DNS 失败：\(error)")
+            guard notifyOnFailure else { return }
+            Notifier.post(id: "systemDNS", title: "Failed to Restore System DNS", body: error.localizedDescription)
+        }
+    }
+
+    /// 内核运行中则热重载，否则启动
+    @discardableResult
+    private func apply() async -> Bool {
+        guard status == .running, let profileURL else {
+            return await start()
         }
 
         loadedDNSServers = dnsMonitor?.servers ?? []
@@ -433,8 +525,11 @@ final class CoreManager {
             await refreshProxies()
             // 配置可能更换了代理端口
             await syncProxySettings()
+            await syncSystemDNS()
+            return true
         } catch {
             Notifier.post(id: "core", title: "Failed to Load Config", body: error.localizedDescription)
+            return false
         }
     }
 
@@ -463,9 +558,10 @@ final class CoreManager {
         }
     }
 
-    private func start() async {
+    @discardableResult
+    private func start() async -> Bool {
         await stop()
-        guard let profileURL else { return }
+        guard let profileURL else { return false }
 
         status = .starting
         do {
@@ -488,19 +584,24 @@ final class CoreManager {
             runtimeConfig = rendered.payload
             await refreshProxies()
             await syncProxySettings()
+            await syncSystemDNS()
             Notifier.post(id: "core", title: "Core Started", body: String(localized: "mihomo \(version), \(mode.title) mode"))
+            return true
         } catch {
             await stop()
             status = .failed
             Notifier.post(id: "core", title: "Failed to Start Core", body: error.localizedDescription)
+            return false
         }
     }
 
     private func stop() async {
+        await restoreSystemDNS()
         await restoreSystemProxy()
         guard let process else { return }
         // 先移除引用，使退出回调忽略这次主动停止
         self.process = nil
+        isCorePrivileged = false
         status = .stopped
         await Self.terminate(process)
     }
@@ -532,12 +633,15 @@ final class CoreManager {
             }
         }
 
+        let isPrivileged = TunPermission.isGranted
         do {
             try process.run()
         } catch {
             NSLog("启动内核失败：\(error)")
             throw CoreError.launchFailed
         }
+        // setuid 在 exec 时生效；记录本进程是否具有创建 TUN 的权限
+        isCorePrivileged = isPrivileged
         return process
     }
 
@@ -560,8 +664,12 @@ final class CoreManager {
     private func processDidExit(pid: Int32, code: Int32) {
         guard let process, process.processIdentifier == pid, status == .running else { return }
         self.process = nil
+        isCorePrivileged = false
         status = .failed
-        enqueue { await self.restoreSystemProxy() }
+        enqueue {
+            await self.restoreSystemDNS()
+            await self.restoreSystemProxy()
+        }
         Notifier.post(id: "core", title: "Core Exited", body: Self.lastLogError() ?? String(localized: "Exit code \(code)"))
     }
 

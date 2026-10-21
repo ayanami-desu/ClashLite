@@ -83,6 +83,11 @@ struct ClashLiteApp: App {
                 set: { core.setSystemProxyEnabled($0) }
             ))
 
+            Toggle("Take Over System DNS", isOn: Binding(
+                get: { core.isSystemDNSEnabled },
+                set: { core.setSystemDNSEnabled($0) }
+            ))
+
             Divider()
 
             ProfileMenu(profileStore: profileStore, core: core)
