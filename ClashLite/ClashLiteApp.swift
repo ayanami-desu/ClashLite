@@ -78,6 +78,11 @@ struct ClashLiteApp: App {
 
             Toggle("TUN Mode", isOn: Binding(get: { core.isTunEnabled }, set: { core.setTunEnabled($0) }))
 
+            Toggle("System Proxy", isOn: Binding(
+                get: { core.isSystemProxyEnabled },
+                set: { core.setSystemProxyEnabled($0) }
+            ))
+
             Divider()
 
             ProfileMenu(profileStore: profileStore, core: core)
