@@ -1,110 +1,107 @@
 # ClashLite
 
-**English** | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | [Русский](README.ru.md)
+一个极简的 macOS 菜单栏 [mihomo](https://github.com/MetaCubeX/mihomo) 客户端。
 
-A minimal macOS menu bar client for [mihomo](https://github.com/MetaCubeX/mihomo).
+## 为什么做这个
 
-## Why
+mihomo 内核本身就能托管 Web 面板（`external-ui`），像 [metacubexd](https://github.com/MetaCubeX/metacubexd) 这样的面板已经把节点、连接、规则、日志都做得很好了。可现在的客户端大多还要自己再造一个面板，功能重复，体积和复杂度也跟着上去了——内核：我自己有面板啊？
 
-The mihomo core can already host a web dashboard by itself (`external-ui`), and dashboards like [metacubexd](https://github.com/MetaCubeX/metacubexd) already do a great job with proxies, connections, rules, and logs. Yet most clients still build their own dashboard on top, duplicating features and growing in size and complexity along the way. Meanwhile the core is going: "I already have a dashboard, you know?"
+ClashLite 的想法很简单：**只做内核做不了的事，其余的交给内核和它自带的面板。**
 
-ClashLite's idea is simple: **do only what the core can't, and leave the rest to the core and its dashboard.**
+- 管理内核进程、配置文件、订阅更新、覆写、TUN 授权这类「客户端」的活，由 ClashLite 负责
+- 查看连接、日志、规则、测速这类「面板」的活，一键打开内核托管的面板即可
+- 日常最常用的操作（切换模式、切换节点、开关网卡代理）放在菜单栏里，不用打开面板
 
-- "Client" jobs such as managing the core process, profiles, subscription updates, overrides, and TUN authorization are handled by ClashLite
-- "Dashboard" jobs such as viewing connections, logs, rules, and running speed tests are one click away in the core-hosted dashboard
-- The most common everyday actions (switching mode, switching proxies, toggling TUN mode) live in the menu bar, so you don't need to open the dashboard
+没有主窗口，没有 Dock 图标，只有一个菜单栏图标。
 
-No main window, no Dock icon, just a menu bar icon.
+## 功能
 
-## Features
+- **内核托管面板**：一键打开 mihomo 托管的面板，自动带上地址和密钥，无需手动填写后端；默认使用 metacubexd，也可以通过配置中的 `external-ui-url` 换成其他面板，支持在菜单中更新面板
+- **配置管理**：支持订阅链接和本地 YAML 文件；订阅可自动更新（默认采用订阅提供的 `profile-update-interval`）；可在应用内编辑本地配置、查看订阅配置
+- **配置校验**：导入、编辑、更新配置以及保存覆写时，都会先用内核（`mihomo -t`）完整校验，配置有问题不会被应用
+- **覆写**：分为「配置覆写」（只对单个配置生效）和「全局覆写」（对所有配置生效），按 YAML 深度合并
+- **菜单栏快捷操作**：切换代理模式（规则 / 全局 / 直连）、在策略组中切换节点（显示延迟）、解除锁定、关闭所有连接、重启内核
+- **网卡代理（TUN）**：只需授权一次；开启时自动将 DNS 调整为 fake-ip 模式，并把局域网 DNS 换成公网 DNS，让查询进入虚拟网卡
+- **与面板同步**：在面板中修改模式、切换节点等操作会同步回菜单栏，下次重启内核仍然保留
+- **开机自启**
 
-- **Core-hosted dashboard**: open the mihomo-hosted dashboard in one click with the address and secret filled in automatically, so there's no backend to configure by hand. metacubexd is used by default; switch to another dashboard with `external-ui-url` in your profile. The dashboard can be updated from the menu
-- **Profile management**: supports subscription URLs and local YAML files. Subscriptions can update automatically (using the subscription's `profile-update-interval` by default). Local profiles can be edited in the app, and subscription profiles can be viewed
-- **Profile validation**: importing, editing, or updating a profile, and saving an override, all run a full validation with the core (`mihomo -t`) first, so a broken profile is never applied
-- **Overrides**: "profile overrides" (apply to a single profile) and a "global override" (applies to all profiles), deep-merged as YAML
-- **Menu bar shortcuts**: switch proxy mode (Rule / Global / Direct), switch proxies in proxy groups (with latency), unpin, close all connections, restart the core
-- **TUN mode**: authorize only once; DNS is automatically switched to fake-ip mode when enabled, and a LAN DNS server is replaced with a public one so queries enter the tunnel
-- **Dashboard sync**: changing the mode or switching proxies in the dashboard is synced back to the menu bar and kept across core restarts
-- **Launch at login**
-- **Multilingual**: English, Simplified Chinese, Traditional Chinese, and Russian, following the system language
+## 界面截图
 
-## Screenshots
+使用示例配置的简体中文界面。
 
-English interface with example profiles.
-
-| Menu bar | Profile management |
+| 菜单栏 | 配置管理 |
 | --- | --- |
-| <img src="docs/screenshots/en/menu-bar.png" alt="Menu bar" width="220"> | <img src="docs/screenshots/en/profiles.png" alt="Profile management" width="400"> |
+| <img src="docs/screenshots/zh-Hans/menu-bar.png" alt="菜单栏" width="220"> | <img src="docs/screenshots/zh-Hans/profiles.png" alt="配置管理" width="400"> |
 
 <details>
-<summary>More screenshots</summary>
+<summary>更多界面截图</summary>
 
-### Proxy groups
+### 策略组
 
-<img src="docs/screenshots/en/proxy-groups.png" alt="Proxy groups" width="300">
+<img src="docs/screenshots/zh-Hans/proxy-groups.png" alt="策略组" width="300">
 
-### Add a subscription
+### 添加订阅
 
-<img src="docs/screenshots/en/add-subscription.png" alt="Add a subscription" width="420">
+<img src="docs/screenshots/zh-Hans/add-subscription.png" alt="添加订阅" width="420">
 
-### Import a local profile
+### 导入本地配置
 
-<img src="docs/screenshots/en/add-local.png" alt="Import a local profile" width="420">
+<img src="docs/screenshots/zh-Hans/add-local.png" alt="导入本地配置" width="420">
 
-### Edit a local profile
+### 编辑本地配置
 
-<img src="docs/screenshots/en/edit-profile.png" alt="Edit a local profile" width="760">
+<img src="docs/screenshots/zh-Hans/edit-profile.png" alt="编辑本地配置" width="760">
 
-### View a subscription profile
+### 查看订阅配置
 
-<img src="docs/screenshots/en/view-profile.png" alt="View a subscription profile" width="760">
+<img src="docs/screenshots/zh-Hans/view-profile.png" alt="查看订阅配置" width="760">
 
-### Profile override
+### 配置覆写
 
-<img src="docs/screenshots/en/profile-override.png" alt="Profile override" width="760">
+<img src="docs/screenshots/zh-Hans/profile-override.png" alt="配置覆写" width="760">
 
-### Global override
+### 全局覆写
 
-<img src="docs/screenshots/en/global-override.png" alt="Global override" width="760">
+<img src="docs/screenshots/zh-Hans/global-override.png" alt="全局覆写" width="760">
 
-### Runtime config
+### 运行时配置
 
-<img src="docs/screenshots/en/runtime-config.png" alt="Runtime config" width="760">
+<img src="docs/screenshots/zh-Hans/runtime-config.png" alt="运行时配置" width="760">
 
 </details>
 
-## Requirements
+## 系统要求
 
-- macOS 15 or later
-- Apple silicon or Intel Mac (universal binary)
+- macOS 15 或更高版本
+- Apple 芯片和 Intel 的 Mac 均可（通用二进制）
 
-## Installation
+## 安装
 
-1. Download the latest version from [Releases](../../releases) and drag ClashLite into Applications. Each release provides these DMGs:
+1. 在 [Releases](../../releases) 下载最新版本，将 ClashLite 拖入「应用程序」。每个版本提供以下 DMG：
 
-   | File | Description |
+   | 文件 | 说明 |
    | --- | --- |
-   | `ClashLite-x.y.z-mihomo-vA.B.C-arm64.dmg` | Bundles the mihomo core (latest stable release at build time), for Apple silicon. Recommended |
-   | `ClashLite-x.y.z-mihomo-vA.B.C-amd64.dmg` | Bundles the mihomo core, for Intel |
-   | `ClashLite-x.y.z.dmg` | No core included; you provide your own |
+   | `ClashLite-x.y.z-mihomo-vA.B.C-arm64.dmg` | 自带 mihomo 内核（打包时的最新正式版），适用于 Apple 芯片，推荐 |
+   | `ClashLite-x.y.z-mihomo-vA.B.C-amd64.dmg` | 自带 mihomo 内核，适用于 Intel 芯片 |
+   | `ClashLite-x.y.z.dmg` | 不含内核，需要自己放入 |
 
-2. The app is not notarized, so remove the quarantine attribute before opening it for the first time:
+2. 应用未经公证，首次打开前需要移除隔离属性：
 
    ```sh
    xattr -cr /Applications/ClashLite.app
    ```
 
-   Alternatively, after the first launch is blocked, click "Open Anyway" in System Settings → Privacy & Security.
+   或者首次打开被拦截后，在「系统设置 → 隐私与安全性」中点击「仍要打开」。
 
-### Core
+### 内核
 
-Versions with a bundled core copy it to the core folder on first launch; nothing else is needed. An existing core in the core folder is never overwritten, so updating ClashLite won't replace a core you placed yourself. To switch to the core bundled with a newer release, delete `mihomo` from the core folder and reopen ClashLite.
+自带内核的版本在首次启动时会把内核复制到内核目录，无需其他操作。内核目录中已有内核时不会覆盖，所以之后更新 ClashLite 不会替换你自己的内核；想换成新版附带的内核，删掉内核目录中的 `mihomo` 再重新打开 ClashLite 即可。
 
-If you're using the version without a core, or want to pick the core version yourself:
+使用不含内核的版本，或者想自己选择内核版本时，按以下步骤放入：
 
-1. Download the core for your architecture from [mihomo Releases](https://github.com/MetaCubeX/mihomo/releases) (`mihomo-darwin-arm64-*.gz` for Apple silicon, `mihomo-darwin-amd64-*.gz` for Intel) and extract it
-2. In the menu bar, click "More → Open Core Folder", put the extracted file there and **rename it to `mihomo`**
-3. Make it executable and remove the quarantine attribute:
+1. 从 [mihomo Releases](https://github.com/MetaCubeX/mihomo/releases) 下载对应架构的内核（Apple 芯片选 `mihomo-darwin-arm64-*.gz`，Intel 选 `mihomo-darwin-amd64-*.gz`）并解压
+2. 在菜单栏中点击「更多 → 打开内核目录」，把解压出的文件放进去并**重命名为 `mihomo`**
+3. 赋予执行权限并移除隔离属性：
 
    ```sh
    cd ~/Library/Application\ Support/com.oxi.ClashLite/Core
@@ -112,93 +109,93 @@ If you're using the version without a core, or want to pick the core version you
    xattr -d com.apple.quarantine mihomo
    ```
 
-4. The core version shows up in the menu bar, and the core starts automatically once you add a profile
+4. 菜单栏中会显示内核版本，添加配置后内核就会自动启动
 
-To upgrade the core later, just replace this file and click "More → Restart Core". If TUN mode is on, you'll be asked to authorize again after replacing it.
+以后升级内核只需替换这个文件，然后点击「更多 → 重启内核」。如果开启了网卡代理，替换后会重新请求一次授权。
 
-## Usage
+## 使用说明
 
-### Overrides
+### 配置覆写
 
-An override is a YAML mapping, merged onto the profile in this order:
+覆写内容是一段 YAML 映射，会按以下顺序合并到配置上：
 
 ```
-Profile → Profile override → Global override → ClashLite settings (mode, TUN, controller, etc.)
+配置文件 → 配置覆写 → 全局覆写 → ClashLite 的设置（模式、TUN、控制接口等）
 ```
 
-Merge rules:
+合并规则：
 
-- Mappings are merged recursively key by key; other values are replaced
-- For lists, `+key` inserts before the original list and `key+` appends after it
+- 映射逐键递归合并，其余值直接替换
+- 列表用 `+key` 插入到原列表之前，用 `key+` 追加到原列表之后
 
-For example, to make custom rules take precedence over the subscription's rules:
+例如让自定义规则优先于订阅中的规则：
 
 ```yaml
 +rules:
   - DOMAIN-SUFFIX,example.com,DIRECT
 ```
 
-### TUN mode
+### 网卡代理
 
-Creating a virtual network interface requires root. The first time you enable it, ClashLite shows the system administrator authorization dialog, makes the core file owned by root and sets the setuid bit, after which no further authorization is needed. Replacing the core file drops these permissions, and you'll be asked again.
+创建虚拟网卡需要 root 权限。首次开启时，ClashLite 会弹出系统的管理员授权对话框，把内核文件设为 root 所有并加上 setuid 位，之后不再需要授权。替换内核文件后权限会丢失，届时会再次请求。
 
-macOS cannot intercept DNS queries sent to a LAN DNS server through the TUN interface. When TUN is on and the current network service uses a LAN, loopback, or link-local DNS server, ClashLite removes those servers so the queries enter the tunnel; existing public DNS servers are kept, and 223.5.5.5 and 119.29.29.29 are used when none remain. The original settings are restored when TUN is turned off, the core stops, or ClashLite quits. This is controlled by the "Take Over System DNS" menu item and is on by default.
+macOS 无法通过虚拟网卡劫持发往局域网 DNS 的查询。开启网卡代理时，如果当前网络服务使用的是局域网、回环或链路本地 DNS，ClashLite 会移除这些服务器，让查询进入虚拟网卡；原有的公网 DNS 保留不动，没有可用公网 DNS 时使用 223.5.5.5 和 119.29.29.29。关闭网卡代理、内核停止或退出 ClashLite 时恢复原设置。菜单中的「接管系统 DNS」控制该行为，默认开启。
 
-Apps that send DNS queries directly to a hardcoded LAN server are not affected. While TUN is on, split DNS and internal domains resolved only by the LAN DNS may stop working; turn off "Take Over System DNS" in that case.
+自行向局域网 DNS 直接发包的应用不受影响。开启网卡代理期间，split DNS 和只能由局域网 DNS 解析的内网域名可能失效，此时可以关闭「接管系统 DNS」。
 
-### File locations
+### 文件位置
 
-All data lives in `~/Library/Application Support/com.oxi.ClashLite/`:
+所有数据都在 `~/Library/Application Support/com.oxi.ClashLite/` 中：
 
-| Path | Description |
+| 路径 | 说明 |
 | --- | --- |
-| `Core/mihomo` | Core executable |
-| `Home/` | Core working directory, with Geo data, rule sets, dashboard, etc. |
-| `Home/mihomo.log` | Core log, cleared on every start |
-| `Profiles/` | Profiles; the file name is the profile name |
-| `Overrides/` | Profile overrides |
-| `Override.yaml` | Global override |
+| `Core/mihomo` | 内核可执行文件 |
+| `Home/` | 内核工作目录，存放 Geo 数据、规则集、面板等 |
+| `Home/mihomo.log` | 内核日志，每次启动时清空 |
+| `Profiles/` | 配置文件，文件名即配置名称 |
+| `Overrides/` | 配置覆写 |
+| `Override.yaml` | 全局覆写 |
 
-### Security
+### 安全性
 
-- The controller only listens on `127.0.0.1:9097`, with a secret randomly generated on first launch
-- The dashboard path is randomly generated as well
-- The final config is passed to the core via an environment variable, so the secret and proxy details never appear in process arguments
+- 控制接口只监听 `127.0.0.1:9097`，密钥在首次启动时随机生成
+- 面板路径同样随机生成
+- 最终配置通过环境变量交给内核，密钥和节点信息不会出现在进程参数中
 
-## Building from source
+## 从源码构建
 
-Requires Xcode 26 or later (the project uses Swift 6.2 and an Icon Composer icon).
+需要 Xcode 26 或更高版本（项目使用了 Swift 6.2 和 Icon Composer 图标）。
 
 ```sh
-git clone <repository URL>
+git clone <仓库地址>
 cd ClashLite
 open ClashLite.xcodeproj
 ```
 
-The dependency ([Yams](https://github.com/jpsim/Yams)) is fetched automatically by Swift Package Manager.
+依赖（[Yams](https://github.com/jpsim/Yams)）通过 Swift Package Manager 自动拉取。
 
-### Localization
+### 本地化
 
-UI strings live in the String Catalog `ClashLite/Localizable.xcstrings`, with English as the source language. To add or change a translation, edit it in Xcode.
+界面文本位于字符串目录 `ClashLite/Localizable.xcstrings`，键名沿用英语，目前只提供简体中文翻译，应用固定使用简体中文界面。
 
-### Releasing
+### 发布
 
-Pushing a tag starting with `v` triggers GitHub Actions to build the DMGs and create a Release. Versions with a bundled core download the latest stable mihomo at build time and are packaged separately for arm64 and amd64:
+推送 `v` 开头的 tag 即会触发 GitHub Actions，自动构建 DMG 并创建 Release。自带内核的版本会在构建时下载 mihomo 最新的正式版，按 arm64 与 amd64 分别打包：
 
 ```sh
 git tag v1.0.0
 git push origin v1.0.0
 ```
 
-You can also run the workflow manually from the Actions page; build products are uploaded as artifacts.
+也可以在 Actions 页面手动运行，构建产物会作为 Artifact 上传。
 
-## Acknowledgements
+## 致谢
 
 - [mihomo](https://github.com/MetaCubeX/mihomo)
 - [metacubexd](https://github.com/MetaCubeX/metacubexd)
 - [Yams](https://github.com/jpsim/Yams)
-- ClashBar, [clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev): ideas for TUN authorization and DNS handling
+- ClashBar、[clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev)：参考了 TUN 授权与 DNS 处理的思路
 
-## License
+## 许可证
 
 [GPL-3.0](LICENSE)
