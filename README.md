@@ -73,17 +73,15 @@ ClashLite 的想法很简单：**只做内核做不了的事，其余的交给�
 ## 系统要求
 
 - macOS 15 或更高版本
-- Apple 芯片和 Intel 的 Mac 均可（通用二进制）
+- Apple 芯片（M 系列），不支持 Intel
 
 ## 安装
 
-1. 在 [Releases](../../releases) 下载最新版本，将 ClashLite 拖入「应用程序」。每个版本提供以下 DMG：
+1. 在 [Releases](../../releases) 下载最新版本，将 ClashLite 拖入「应用程序」。每个版本只提供一个 DMG：
 
    | 文件 | 说明 |
    | --- | --- |
-   | `ClashLite-x.y.z-mihomo-vA.B.C-arm64.dmg` | 自带 mihomo 内核（打包时的最新正式版），适用于 Apple 芯片，推荐 |
-   | `ClashLite-x.y.z-mihomo-vA.B.C-amd64.dmg` | 自带 mihomo 内核，适用于 Intel 芯片 |
-   | `ClashLite-x.y.z.dmg` | 不含内核，需要自己放入 |
+   | `ClashLite-x.y.z-mihomo-alpha-<commit>-arm64.dmg` | 内置 mihomo alpha 内核，适用于 Apple 芯片 |
 
 2. 应用未经公证，首次打开前需要移除隔离属性：
 
@@ -95,11 +93,11 @@ ClashLite 的想法很简单：**只做内核做不了的事，其余的交给�
 
 ### 内核
 
-自带内核的版本在首次启动时会把内核复制到内核目录，无需其他操作。内核目录中已有内核时不会覆盖，所以之后更新 ClashLite 不会替换你自己的内核；想换成新版附带的内核，删掉内核目录中的 `mihomo` 再重新打开 ClashLite 即可。
+DMG 内置的 alpha 内核在首次启动时会被复制到内核目录，无需其他操作。内核目录中已有内核时不会覆盖，所以之后更新 ClashLite 不会替换你自己的内核；想换成新版附带的内核，删掉内核目录中的 `mihomo` 再重新打开 ClashLite 即可。
 
-使用不含内核的版本，或者想自己选择内核版本时，按以下步骤放入：
+想自己选择内核版本时，按以下步骤放入：
 
-1. 从 [mihomo Releases](https://github.com/MetaCubeX/mihomo/releases) 下载对应架构的内核（Apple 芯片选 `mihomo-darwin-arm64-*.gz`，Intel 选 `mihomo-darwin-amd64-*.gz`）并解压
+1. 从 [mihomo Releases](https://github.com/MetaCubeX/mihomo/releases) 下载 Apple 芯片内核（`mihomo-darwin-arm64-*.gz`）并解压
 2. 在菜单栏中点击「更多 → 打开内核目录」，把解压出的文件放进去并**重命名为 `mihomo`**
 3. 赋予执行权限并移除隔离属性：
 
@@ -180,7 +178,7 @@ open ClashLite.xcodeproj
 
 ### 发布
 
-推送 `v` 开头的 tag 即会触发 GitHub Actions，自动构建 DMG 并创建 Release。自带内核的版本会在构建时下载 mihomo 最新的正式版，按 arm64 与 amd64 分别打包：
+推送 `v` 开头的 tag 即会触发 GitHub Actions，自动构建 DMG 并创建 Release。构建时下载最新的 mihomo alpha 内核，只打包 Apple 芯片（arm64）版本：
 
 ```sh
 git tag v1.0.0

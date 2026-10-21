@@ -39,7 +39,7 @@ jobs:
             -configuration Release \
             -derivedDataPath build/DerivedData \
             -destination "generic/platform=macOS" \
-            ARCHS="arm64 x86_64" \
+            ARCHS="arm64" \
             ONLY_ACTIVE_ARCH=NO \
             MARKETING_VERSION="${{ steps.version.outputs.version }}" \
             CURRENT_PROJECT_VERSION="${{ github.run_number }}" \
@@ -48,31 +48,30 @@ jobs:
             DEVELOPMENT_TEAM="" \
             build
 
-      # Intel 选 amd64-v1，兼容所有 Intel 机型
+      # alpha 是滚动预发布，资源名带提交短哈希
       - name: Download mihomo
         id: mihomo
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          TAG="$(gh release view --repo MetaCubeX/mihomo --json tagName --jq .tagName)"
+          TAG="Prerelease-Alpha"
           mkdir -p build/mihomo && cd build/mihomo
           gh release download "$TAG" --repo MetaCubeX/mihomo \
-            --pattern "mihomo-darwin-arm64-$TAG.gz" \
-            --pattern "mihomo-darwin-amd64-v1-$TAG.gz"
-          gunzip -c "mihomo-darwin-arm64-$TAG.gz" > arm64
-          gunzip -c "mihomo-darwin-amd64-v1-$TAG.gz" > amd64
-          chmod +x arm64 amd64
+            --pattern "mihomo-darwin-arm64-alpha-*.gz"
+          ARCHIVE="$(ls mihomo-darwin-arm64-alpha-*.gz)"
+          CORE="${ARCHIVE%.gz}"
+          CORE_VERSION="${CORE#mihomo-darwin-arm64-}"
+          gunzip -c "$ARCHIVE" > arm64
+          chmod +x arm64
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version=$CORE_VERSION" >> "$GITHUB_OUTPUT"
 
       # dmgbuild 直接写入 .DS_Store 来设置窗口样式，不依赖 Finder 脚本，在 CI 中更稳定
       - name: Create DMG
         run: |
           VERSION="${{ steps.version.outputs.version }}"
           APP="build/DerivedData/Build/Products/Release/ClashLite.app"
-          # 逐个验证，兼容当前 lipo 对多个 -verify_arch 参数的解析行为。
-          for ARCH in arm64 x86_64; do
-            lipo "$APP/Contents/MacOS/ClashLite" -verify_arch "$ARCH"
-          done
+          lipo "$APP/Contents/MacOS/ClashLite" -verify_arch arm64
 
           pipx install dmgbuild
           mkdir -p build/dmg
@@ -83,23 +82,19 @@ jobs:
             dmgbuild -s dmg/settings.py -D app="$1" -D background=build/dmg/background.tiff ClashLite "$2"
           }
 
-          make_dmg "$APP" "ClashLite-$VERSION.dmg"
-
-          # 自带内核的版本按架构分别打包：内核放入 Resources，首次启动时复制到内核目录；改动了包内容，需重新签名
-          for ARCH in arm64 amd64; do
-            BUNDLED="$(mktemp -d)/ClashLite.app"
-            cp -R "$APP" "$BUNDLED"
-            cp "build/mihomo/$ARCH" "$BUNDLED/Contents/Resources/mihomo"
-            codesign --force --sign - "$BUNDLED/Contents/Resources/mihomo"
-            codesign --force --sign - --options runtime --preserve-metadata=entitlements "$BUNDLED"
-            codesign --verify --strict --verbose=2 "$BUNDLED"
-            make_dmg "$BUNDLED" "ClashLite-$VERSION-mihomo-${{ steps.mihomo.outputs.tag }}-$ARCH.dmg"
-          done
+          # 只打包 Apple 芯片 + 内置 alpha 内核；首次启动时复制到内核目录，改动了包内容，需重新签名
+          BUNDLED="$(mktemp -d)/ClashLite.app"
+          cp -R "$APP" "$BUNDLED"
+          cp "build/mihomo/arm64" "$BUNDLED/Contents/Resources/mihomo"
+          codesign --force --sign - "$BUNDLED/Contents/Resources/mihomo"
+          codesign --force --sign - --options runtime --preserve-metadata=entitlements "$BUNDLED"
+          codesign --verify --strict --verbose=2 "$BUNDLED"
+          make_dmg "$BUNDLED" "ClashLite-$VERSION-mihomo-${{ steps.mihomo.outputs.version }}-arm64.dmg"
 
       - uses: actions/upload-artifact@v7.0.2
         with:
-          name: ClashLite-${{ steps.version.outputs.version }}
           path: "*.dmg"
+          archive: false
 
       - name: Release
         if: github.ref_type == 'tag'
@@ -109,16 +104,9 @@ jobs:
           body: |
             ## 下载
 
-            **内置 mihomo ${{ steps.mihomo.outputs.tag }}，下载即用（推荐）**
+            **内置 mihomo ${{ steps.mihomo.outputs.version }}，仅支持 Apple 芯片（M 系列）**
 
-            - Apple 芯片（M 系列）：[ClashLite-${{ steps.version.outputs.version }}-mihomo-${{ steps.mihomo.outputs.tag }}-arm64.dmg](${{ github.server_url }}/${{ github.repository }}/releases/download/${{ github.ref_name }}/ClashLite-${{ steps.version.outputs.version }}-mihomo-${{ steps.mihomo.outputs.tag }}-arm64.dmg)
-            - Intel 芯片：[ClashLite-${{ steps.version.outputs.version }}-mihomo-${{ steps.mihomo.outputs.tag }}-amd64.dmg](${{ github.server_url }}/${{ github.repository }}/releases/download/${{ github.ref_name }}/ClashLite-${{ steps.version.outputs.version }}-mihomo-${{ steps.mihomo.outputs.tag }}-amd64.dmg)
+            - [ClashLite-${{ steps.version.outputs.version }}-mihomo-${{ steps.mihomo.outputs.version }}-arm64.dmg](${{ github.server_url }}/${{ github.repository }}/releases/download/${{ github.ref_name }}/ClashLite-${{ steps.version.outputs.version }}-mihomo-${{ steps.mihomo.outputs.version }}-arm64.dmg)
 
-            **不含内核**
-
-            - 通用版（Apple 芯片 / Intel 均可）：[ClashLite-${{ steps.version.outputs.version }}.dmg](${{ github.server_url }}/${{ github.repository }}/releases/download/${{ github.ref_name }}/ClashLite-${{ steps.version.outputs.version }}.dmg)
-
-              适合想自己管理内核版本的用户。
-
-            > 需要 macOS 15 或更高版本。
+            > 需要 macOS 15 或更高版本，仅支持 Apple 芯片。
           generate_release_notes: true
