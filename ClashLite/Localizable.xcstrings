@@ -8,18 +8,6 @@
             "state" : "translated",
             "value" : "%@（已删除）"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@（已刪除）"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ (удалён)"
-          }
         }
       }
     },
@@ -29,18 +17,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "已存在名为“%@”的配置"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "已存在名為「%@」的設定檔"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Профиль «%@» уже существует"
           }
         }
       }
@@ -52,18 +28,6 @@
             "state" : "translated",
             "value" : "添加"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "新增"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавить"
-          }
         }
       }
     },
@@ -73,18 +37,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "添加当前 Wi-Fi"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "新增目前 Wi-Fi"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавить текущую сеть"
           }
         }
       }
@@ -96,18 +48,6 @@
             "state" : "translated",
             "value" : "新增配置"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "新增設定檔"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавить профиль"
-          }
         }
       }
     },
@@ -117,18 +57,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "新增配置…"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "新增設定檔…"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавить профиль…"
           }
         }
       }
@@ -140,18 +68,6 @@
             "state" : "translated",
             "value" : "添加规则"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "新增規則"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавить правило"
-          }
         }
       }
     },
@@ -161,18 +77,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "App 版本"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "App 版本"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Версия приложения"
           }
         }
       }
@@ -184,18 +88,6 @@
             "state" : "translated",
             "value" : "只对此配置生效，在全局覆写之前合并；列表可用 +key 前置、key+ 追加"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "只對此設定檔生效，在全域覆寫之前合併；清單可用 +key 前置、key+ 附加"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Применяется только к этому профилю, объединяется перед глобальным переопределением. Для списков используйте +key, чтобы добавить в начало, и key+ — в конец."
-          }
         }
       }
     },
@@ -205,18 +97,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "对所有配置生效，在配置覆写之后合并；列表可用 +key 前置、key+ 追加"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "對所有設定檔生效，在設定檔覆寫之後合併；清單可用 +key 前置、key+ 附加"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Применяется ко всем профилям, объединяется после переопределения профиля. Для списков используйте +key, чтобы добавить в начало, и key+ — в конец."
           }
         }
       }
@@ -228,18 +108,6 @@
             "state" : "translated",
             "value" : "确定要退出 ClashLite 吗？"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "確定要結束 ClashLite 嗎？"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Вы уверены, что хотите выйти из ClashLite?"
-          }
         }
       }
     },
@@ -249,18 +117,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "已取消授权"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "已取消授權"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Авторизация отменена"
           }
         }
       }
@@ -272,18 +128,6 @@
             "state" : "translated",
             "value" : "授权失败"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "授權失敗"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ошибка авторизации"
-          }
         }
       }
     },
@@ -293,18 +137,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "自动更新：%@"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "自動更新：%@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Автообновление: %@"
           }
         }
       }
@@ -316,18 +148,6 @@
             "state" : "translated",
             "value" : "取消"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "取消"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отмена"
-          }
         }
       }
     },
@@ -337,18 +157,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "选择…"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "選擇…"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Выбрать…"
           }
         }
       }
@@ -360,18 +168,6 @@
             "state" : "translated",
             "value" : "每次启动内核时清空，自动刷新。"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "每次啟動核心時清空，自動重新整理。"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Очищается при каждом запуске ядра. Обновляется автоматически."
-          }
         }
       }
     },
@@ -381,18 +177,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "关闭"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "關閉"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Закрыть"
           }
         }
       }
@@ -404,18 +188,6 @@
             "state" : "translated",
             "value" : "关闭所有连接"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "關閉所有連線"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Закрыть все соединения"
-          }
         }
       }
     },
@@ -425,18 +197,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "配置文件"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定檔案"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Файл конфигурации"
           }
         }
       }
@@ -448,18 +208,6 @@
             "state" : "translated",
             "value" : "内核接口请求失败（HTTP %lld）"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "核心 API 請求失敗（HTTP %lld）"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ошибка запроса к API ядра (HTTP %lld)"
-          }
         }
       }
     },
@@ -469,18 +217,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "内核已退出"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "核心已結束"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ядро завершило работу"
           }
         }
       }
@@ -492,18 +228,6 @@
             "state" : "translated",
             "value" : "内核日志"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "核心日誌"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Журнал ядра"
-          }
         }
       }
     },
@@ -513,18 +237,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "内核未运行"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "核心未執行"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ядро не запущено"
           }
         }
       }
@@ -536,18 +248,6 @@
             "state" : "translated",
             "value" : "内核已启动"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "核心已啟動"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ядро запущено"
-          }
         }
       }
     },
@@ -557,18 +257,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "内核版本"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "核心版本"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Версия ядра"
           }
         }
       }
@@ -580,18 +268,6 @@
             "state" : "translated",
             "value" : "未找到内核，请将 mihomo 放入内核目录"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "找不到核心，請將 mihomo 放入核心資料夾"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ядро не найдено. Поместите mihomo в папку ядра."
-          }
         }
       }
     },
@@ -601,18 +277,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "授权后内核权限仍不正确"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "授權後核心權限仍不正確"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "После авторизации права ядра по-прежнему неверны"
           }
         }
       }
@@ -624,18 +288,6 @@
             "state" : "translated",
             "value" : "内核%@"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "核心%@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ядро: %@"
-          }
         }
       }
     },
@@ -645,18 +297,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "当前 Wi-Fi"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "目前 Wi-Fi"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Текущая сеть Wi-Fi"
           }
         }
       }
@@ -668,18 +308,6 @@
             "state" : "translated",
             "value" : "面板已更新"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "面板已更新"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Панель обновлена"
-          }
         }
       }
     },
@@ -689,18 +317,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "删除配置…"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "刪除設定檔…"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Удалить профиль…"
           }
         }
       }
@@ -712,18 +328,6 @@
             "state" : "translated",
             "value" : "要删除“%@”吗？"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "要刪除「%@」嗎？"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Удалить «%@»?"
-          }
         }
       }
     },
@@ -733,18 +337,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "直连"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "直連"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Напрямую"
           }
         }
       }
@@ -756,18 +348,6 @@
             "state" : "translated",
             "value" : "正在下载面板…"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "正在下載面板…"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Загрузка панели…"
-          }
         }
       }
     },
@@ -777,18 +357,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "正在下载…"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "正在下載…"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Загрузка…"
           }
         }
       }
@@ -800,18 +368,6 @@
             "state" : "translated",
             "value" : "编辑配置"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "編輯設定檔"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Редактировать профиль"
-          }
         }
       }
     },
@@ -821,18 +377,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "编辑配置 - %@"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "編輯設定檔 - %@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Редактирование профиля — %@"
           }
         }
       }
@@ -844,41 +388,11 @@
             "state" : "translated",
             "value" : "编辑配置…"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "編輯設定檔…"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Редактировать профиль…"
-          }
         }
       }
     },
     "Every %lld hours" : {
       "localizations" : {
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Every hour"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Every %lld hours"
-                }
-              }
-            }
-          }
-        },
         "zh-Hans" : {
           "variations" : {
             "plural" : {
@@ -886,48 +400,6 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "每 %lld 小时"
-                }
-              }
-            }
-          }
-        },
-        "zh-Hant" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "每 %lld 小時"
-                }
-              }
-            }
-          }
-        },
-        "ru" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Каждый %lld час"
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Каждые %lld часа"
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Каждые %lld часов"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Каждые %lld часа"
                 }
               }
             }
@@ -942,18 +414,6 @@
             "state" : "translated",
             "value" : "退出代码 %d"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "結束代碼 %d"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Код выхода: %d"
-          }
         }
       }
     },
@@ -963,18 +423,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "内核设置失败"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "核心設定失敗"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не удалось применить настройки ядра"
           }
         }
       }
@@ -986,18 +434,6 @@
             "state" : "translated",
             "value" : "关闭连接失败"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "關閉連線失敗"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не удалось закрыть соединения"
-          }
         }
       }
     },
@@ -1007,18 +443,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "下载面板失败"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "下載面板失敗"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не удалось загрузить панель"
           }
         }
       }
@@ -1030,2393 +454,15 @@
             "state" : "translated",
             "value" : "配置加载失败"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定載入失敗"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не удалось загрузить конфигурацию"
-          }
-        }
-      }
-    },
-    "Failed to Start" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "启动失败"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "啟動失敗"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ошибка запуска"
-          }
-        }
-      }
-    },
-    "Failed to Start Core" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "内核启动失败"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "核心啟動失敗"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не удалось запустить ядро"
-          }
-        }
-      }
-    },
-    "Failed to Switch Proxy" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "切换节点失败"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "切換節點失敗"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не удалось переключить прокси"
-          }
-        }
-      }
-    },
-    "Failed to Unpin" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "解除锁定失败"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "解除鎖定失敗"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не удалось снять фиксацию"
-          }
-        }
-      }
-    },
-    "Failed to Update Dashboard" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "更新面板失败"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "更新面板失敗"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не удалось обновить панель"
-          }
-        }
-      }
-    },
-    "Failed to Update Profile" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "更新配置失败"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "更新設定檔失敗"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не удалось обновить профиль"
-          }
-        }
-      }
-    },
-    "Generated by merging the profile, overrides, and app settings. Refreshes automatically when the core reloads." : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "由配置、覆写和应用设置合并生成，内核重新加载后自动刷新"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "由設定檔、覆寫和 App 設定合併產生，核心重新載入後自動更新"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Создаётся слиянием профиля, переопределений и настроек приложения. Обновляется автоматически при перезагрузке ядра."
-          }
-        }
-      }
-    },
-    "Global" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "全局"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "全域"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Глобальный"
-          }
-        }
-      }
-    },
-    "Global Override" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "全局覆写"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "全域覆寫"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Глобальное переопределение"
-          }
-        }
-      }
-    },
-    "Global Override…" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "全局覆写…"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "全域覆寫…"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Глобальное переопределение…"
-          }
-        }
-      }
-    },
-    "Invalid YAML: %@" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "YAML 格式错误：%@"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "YAML 格式錯誤：%@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ошибка формата YAML: %@"
-          }
-        }
-      }
-    },
-    "Keep Mode" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "保持模式"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "保持模式"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Режим без изменений"
-          }
-        }
-      }
-    },
-    "Keep Profile" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "保持配置"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "保持設定檔"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Профиль без изменений"
-          }
-        }
-      }
-    },
-    "Keep TUN" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "保持网卡代理"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "保持網卡代理"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TUN без изменений"
-          }
-        }
-      }
-    },
-    "Last Updated" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "上次更新"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "上次更新"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Последнее обновление"
-          }
-        }
-      }
-    },
-    "Launch at Login" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "开机自启"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "登入時啟動"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Запускать при входе"
-          }
-        }
-      }
-    },
-    "Local File" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "本地文件"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "本機檔案"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Локальный файл"
-          }
-        }
-      }
-    },
-    "Location Services permission is required to read the Wi-Fi name" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "需要定位服务权限才能读取 Wi-Fi 名称"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "需要定位服務權限才能讀取 Wi-Fi 名稱"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Для чтения имени сети Wi-Fi нужно разрешение служб геолокации"
-          }
-        }
-      }
-    },
-    "Mode" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "模式"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "模式"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Режим"
-          }
-        }
-      }
-    },
-    "Mode: %@" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "模式：%@"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "模式：%@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Режим: %@"
-          }
-        }
-      }
-    },
-    "More" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "更多"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "更多"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ещё"
-          }
-        }
-      }
-    },
-    "Move to Trash" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "移到废纸篓"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "丟到垃圾桶"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Переместить в Корзину"
-          }
-        }
-      }
-    },
-    "Name" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "名称"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "名稱"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Название"
-          }
-        }
-      }
-    },
-    "No Wi-Fi" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "未连接 Wi-Fi"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "未連接 Wi-Fi"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Нет Wi-Fi"
-          }
-        }
-      }
-    },
-    "None" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "无"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "無"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Нет"
-          }
-        }
-      }
-    },
-    "None Selected" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "未选择"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "未選擇"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не выбран"
-          }
-        }
-      }
-    },
-    "Not Connected" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "未连接"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "未連接"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не подключено"
-          }
-        }
-      }
-    },
-    "Off" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "关闭"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "關閉"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Выкл."
-          }
-        }
-      }
-    },
-    "On" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "开启"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "開啟"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Вкл."
-          }
-        }
-      }
-    },
-    "Open Core Folder" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "打开内核目录"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "打開核心資料夾"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Открыть папку ядра"
-          }
-        }
-      }
-    },
-    "Open Dashboard" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "打开面板"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "打開面板"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Открыть панель"
-          }
-        }
-      }
-    },
-    "Open Log…" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "打开日志…"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "打開日誌…"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Открыть журнал…"
-          }
-        }
-      }
-    },
-    "Open Profiles Folder" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "打开配置目录"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "打開設定檔資料夾"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Открыть папку профилей"
-          }
-        }
-      }
-    },
-    "Open System Settings" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "打开系统设置"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "打開系統設定"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Открыть Системные настройки"
-          }
-        }
-      }
-    },
-    "Other Networks" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "其他网络"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "其他網路"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Другие сети"
-          }
-        }
-      }
-    },
-    "Other Networks applies when no rule matches, including when not connected to Wi-Fi. “Keep” leaves the setting unchanged." : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "没有匹配的规则时（包括未连接 Wi-Fi）应用“其他网络”的设置。“保持”表示不修改该项。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "沒有相符的規則時（包括未連接 Wi-Fi）套用「其他網路」的設定。「保持」表示不修改該項。"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "«Другие сети» применяются, если ни одно правило не подходит, в том числе без подключения к Wi-Fi. «Без изменений» оставляет настройку как есть."
-          }
-        }
-      }
-    },
-    "Override" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "覆写"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "覆寫"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Переопределение"
-          }
-        }
-      }
-    },
-    "Profile" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "配置"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定檔"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Профиль"
-          }
-        }
-      }
-    },
-    "Profile Info" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "配置信息"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定檔資訊"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сведения о профиле"
-          }
-        }
-      }
-    },
-    "Profile Info - %@" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "配置信息 - %@"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定檔資訊 - %@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сведения о профиле — %@"
-          }
-        }
-      }
-    },
-    "Profile Info…" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "配置信息…"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定檔資訊…"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сведения о профиле…"
-          }
-        }
-      }
-    },
-    "Profile Override - %@" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "配置覆写 - %@"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定檔覆寫 - %@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Переопределение профиля — %@"
-          }
-        }
-      }
-    },
-    "Profile Override…" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "配置覆写…"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定檔覆寫…"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Переопределение профиля…"
-          }
-        }
-      }
-    },
-    "Profile Updated" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "配置已更新"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定檔已更新"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Профиль обновлён"
-          }
-        }
-      }
-    },
-    "Profile with global override applied" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "应用全局覆写后的配置"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "套用全域覆寫後的設定"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Профиль с глобальным переопределением"
-          }
-        }
-      }
-    },
-    "Profile with profile override applied" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "应用配置覆写后的配置"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "套用設定檔覆寫後的設定"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Профиль с переопределением профиля"
-          }
-        }
-      }
-    },
-    "Profile: %@" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "配置：%@"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定檔：%@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Профиль: %@"
-          }
-        }
-      }
-    },
-    "Proxy Groups" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "策略组"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "策略群組"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Группы прокси"
-          }
-        }
-      }
-    },
-    "Quit" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "退出"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "結束"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Выйти"
-          }
-        }
-      }
-    },
-    "Quit ClashLite" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "退出 ClashLite"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "結束 ClashLite"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Выйти из ClashLite"
-          }
-        }
-      }
-    },
-    "Reload the dashboard page in your browser to use the new version." : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "在浏览器中重新载入面板页面即可使用新版本"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "在瀏覽器中重新載入面板頁面即可使用新版本"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Перезагрузите страницу панели в браузере, чтобы использовать новую версию."
-          }
-        }
-      }
-    },
-    "Remote profiles are read-only. Use a profile override to make changes." : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "远程配置为只读，如需修改请使用配置覆写"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "遠端設定檔為唯讀，如需修改請使用設定檔覆寫"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Удалённые профили доступны только для чтения. Для изменений используйте переопределение профиля."
-          }
-        }
-      }
-    },
-    "Remove Rule" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "删除规则"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "刪除規則"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Удалить правило"
-          }
-        }
-      }
-    },
-    "Required, also used as the file name" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "必填，同时作为配置文件名"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "必填，同時作為設定檔名稱"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Обязательно, также используется как имя файла"
-          }
-        }
-      }
-    },
-    "Restart Core" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "重启内核"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "重新啟動核心"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Перезапустить ядро"
-          }
-        }
-      }
-    },
-    "Rule" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "规则"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "規則"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Правила"
-          }
-        }
-      }
-    },
-    "Rules" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "规则"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "規則"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Правила"
-          }
-        }
-      }
-    },
-    "Running" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "运行中"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "執行中"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Работает"
-          }
-        }
-      }
-    },
-    "Runtime Config" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "运行时配置"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "執行時設定"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Активная конфигурация"
-          }
-        }
-      }
-    },
-    "Save" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "保存"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "儲存"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сохранить"
-          }
-        }
-      }
-    },
-    "Show in Finder" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "在访达中显示"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "在 Finder 中顯示"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Показать в Finder"
-          }
-        }
-      }
-    },
-    "Starting" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "启动中"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "啟動中"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Запускается"
-          }
-        }
-      }
-    },
-    "Stopped" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "未运行"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "未執行"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Остановлено"
-          }
-        }
-      }
-    },
-    "Subscription" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "订阅"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "訂閱"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Подписка"
-          }
-        }
-      }
-    },
-    "Subscription URL" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "订阅链接"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "訂閱連結"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "URL подписки"
-          }
-        }
-      }
-    },
-    "Subscription request failed (HTTP %lld)" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "订阅请求失败（HTTP %lld）"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "訂閱請求失敗（HTTP %lld）"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ошибка запроса подписки (HTTP %lld)"
-          }
-        }
-      }
-    },
-    "Switch by Wi-Fi" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "按 Wi-Fi 切换"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "依 Wi-Fi 切換"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Переключение по Wi-Fi"
-          }
-        }
-      }
-    },
-    "Switch by Wi-Fi…" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "按 Wi-Fi 切换…"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "依 Wi-Fi 切換…"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Переключение по Wi-Fi…"
-          }
-        }
-      }
-    },
-    "Switched by Wi-Fi" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "已按 Wi-Fi 切换"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "已依 Wi-Fi 切換"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Переключено по Wi-Fi"
-          }
-        }
-      }
-    },
-    "TUN Authorization Failed" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "网卡代理授权失败"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "網卡代理授權失敗"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ошибка авторизации TUN"
-          }
-        }
-      }
-    },
-    "TUN Mode" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "网卡代理"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "網卡代理"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Режим TUN"
-          }
-        }
-      }
-    },
-    "TUN Off" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "关闭网卡代理"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "關閉網卡代理"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TUN выкл."
-          }
-        }
-      }
-    },
-    "TUN On" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "开启网卡代理"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "開啟網卡代理"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TUN вкл."
-          }
-        }
-      }
-    },
-    "The config passed to the core can be viewed once the core is running." : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "内核运行后可查看传入内核的配置"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "核心執行後可檢視傳入核心的設定"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Конфигурацию, переданную ядру, можно просмотреть после его запуска."
-          }
-        }
-      }
-    },
-    "The core exited unexpectedly" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "内核意外退出"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "核心意外結束"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ядро неожиданно завершило работу"
-          }
-        }
-      }
-    },
-    "The core will stop running after quitting." : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "退出后内核将停止运行。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "結束後核心將停止執行。"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "После выхода ядро будет остановлено."
-          }
-        }
-      }
-    },
-    "The name can’t be empty, start with “.”, or contain “/” or “:”" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "名称不能为空，不能以“.”开头，也不能包含“/”或“:”"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "名稱不能為空，不能以「.」開頭，也不能包含「/」或「:」"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Название не может быть пустым, начинаться с «.» или содержать «/» и «:»"
-          }
-        }
-      }
-    },
-    "The override must be a YAML mapping (key: value)" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "覆写内容必须是 YAML 映射（键: 值）"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "覆寫內容必須是 YAML 映射（鍵: 值）"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Переопределение должно быть YAML-словарём (ключ: значение)"
-          }
-        }
-      }
-    },
-    "The profile file will be moved to the Trash, and its profile override will be removed." : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "配置文件将被移到废纸篓，其配置覆写也会一并删除。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定檔將被丟到垃圾桶，其設定檔覆寫也會一併刪除。"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Файл профиля будет перемещён в Корзину, а его переопределение будет удалено."
-          }
-        }
-      }
-    },
-    "The profile is not a valid YAML mapping" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "配置文件不是有效的 YAML 映射"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定檔不是有效的 YAML 映射"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Профиль не является корректным YAML-словарём"
-          }
-        }
-      }
-    },
-    "The profile itself and the result of applying overrides are validated before saving." : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "保存前会校验配置本身及应用覆写后的配置"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "儲存前會驗證設定檔本身及套用覆寫後的設定"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Перед сохранением проверяются сам профиль и результат применения переопределений."
-          }
-        }
-      }
-    },
-    "The profile “%@” no longer exists" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "配置“%@”已不存在"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定檔「%@」已不存在"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Профиль «%@» больше не существует"
-          }
-        }
-      }
-    },
-    "Timed out waiting for the core to respond" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "等待内核响应超时"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "等待核心回應逾時"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Истекло время ожидания ответа ядра"
-          }
-        }
-      }
-    },
-    "Timeout" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "超时"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "逾時"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Тайм-аут"
-          }
         }
       }
     },
-    "Type" : {
+    "Failed to Restore System Proxy" : {
       "localizations" : {
         "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "类型"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "類型"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Тип"
-          }
-        }
-      }
-    },
-    "Unable to Open Profile" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "无法打开配置"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "無法打開設定檔"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не удалось открыть профиль"
-          }
-        }
-      }
-    },
-    "Unable to move the profile to the Trash" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "无法将配置移到废纸篓"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "無法將設定檔丟到垃圾桶"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не удалось переместить профиль в Корзину"
-          }
-        }
-      }
-    },
-    "Unable to read the profile file" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "无法读取配置文件"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "無法讀取設定檔"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не удалось прочитать файл профиля"
-          }
-        }
-      }
-    },
-    "Unable to read the selected file" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "无法读取所选文件"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "無法讀取所選檔案"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не удалось прочитать выбранный файл"
-          }
-        }
-      }
-    },
-    "Unable to run the core" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "无法运行内核"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "無法執行核心"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не удаётся выполнить ядро"
-          }
-        }
-      }
-    },
-    "Unable to save the override file" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "无法保存覆写文件"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "無法儲存覆寫檔案"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не удалось сохранить файл переопределения"
-          }
-        }
-      }
-    },
-    "Unable to save the profile file" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "无法保存配置文件"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "無法儲存設定檔"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не удалось сохранить файл профиля"
-          }
-        }
-      }
-    },
-    "Unknown error" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "未知错误"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "未知錯誤"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неизвестная ошибка"
-          }
-        }
-      }
-    },
-    "Unpin" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "解除锁定"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "解除鎖定"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Снять фиксацию"
-          }
-        }
-      }
-    },
-    "Update Dashboard" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "更新面板"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "更新面板"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Обновить панель"
-          }
-        }
-      }
-    },
-    "Update Profile" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "更新配置"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "更新設定檔"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Обновить профиль"
-          }
-        }
-      }
-    },
-    "Updating Profile…" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "正在更新配置…"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "正在更新設定檔…"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Обновление профиля…"
-          }
-        }
-      }
-    },
-    "Validating…" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "正在校验…"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "正在驗證…"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Проверка…"
-          }
-        }
-      }
-    },
-    "Validation failed (%@): %@" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@校验失败：%2$@"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@驗證失敗：%2$@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Проверка не пройдена (%1$@): %2$@"
-          }
-        }
-      }
-    },
-    "View Profile - %@" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "查看配置 - %@"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "檢視設定檔 - %@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Просмотр профиля — %@"
-          }
-        }
-      }
-    },
-    "View Profile…" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "查看配置…"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "檢視設定檔…"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Просмотреть профиль…"
-          }
-        }
-      }
-    },
-    "View Runtime Config…" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "查看运行时配置…"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "檢視執行時設定…"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Просмотреть активную конфигурацию…"
-          }
-        }
-      }
-    },
-    "Waiting for Location Services permission…" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "正在等待定位服务权限…"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "正在等待定位服務權限…"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ожидание разрешения служб геолокации…"
-          }
-        }
-      }
-    },
-    "When the Wi-Fi network changes, apply the matching profile, TUN mode, and proxy mode, then reload the core once. macOS requires Location Services permission to read the Wi-Fi name; your location is not used." : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wi-Fi 网络变化时，应用匹配的配置、网卡代理和代理模式，并只重新加载一次内核。macOS 需要定位服务权限才能读取 Wi-Fi 名称，不会使用你的位置。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wi-Fi 網路變更時，套用相符的設定檔、網卡代理和代理模式，並只重新載入一次核心。macOS 需要定位服務權限才能讀取 Wi-Fi 名稱，不會使用你的位置。"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "При смене сети Wi-Fi применяет соответствующие профиль, режим TUN и режим прокси, перезагружая ядро один раз. Для чтения имени сети macOS требует разрешение служб геолокации; ваше местоположение не используется."
-          }
-        }
-      }
-    },
-    "Wi-Fi Name" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wi-Fi 名称"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wi-Fi 名稱"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Имя сети Wi-Fi"
-          }
-        }
-      }
-    },
-    "Wi-Fi “%@”" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wi-Fi“%@”"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wi-Fi「%@」"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wi-Fi «%@»"
-          }
-        }
-      }
-    },
-    "mihomo %@, %@ mode" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mihomo %1$@，%2$@模式"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mihomo %1$@，%2$@模式"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mihomo %1$@, режим: %2$@"
-          }
-        }
-      }
-    },
-    "System Proxy" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "系统代理"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "系統代理"
-          }
-        },
-        "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Системный прокси"
+            "value" : "恢复系统代理失败"
           }
         }
       }
@@ -3428,39 +474,245 @@
             "state" : "translated",
             "value" : "设置系统代理失败"
           }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定系統代理失敗"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не удалось установить системный прокси"
-          }
         }
       }
     },
-    "Failed to Restore System Proxy" : {
+    "Failed to Start" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "恢复系统代理失败"
+            "value" : "启动失败"
           }
-        },
-        "zh-Hant" : {
+        }
+      }
+    },
+    "Failed to Start Core" : {
+      "localizations" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "恢復系統代理失敗"
+            "value" : "内核启动失败"
           }
-        },
-        "ru" : {
+        }
+      }
+    },
+    "Failed to Switch Proxy" : {
+      "localizations" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Не удалось восстановить системный прокси"
+            "value" : "切换节点失败"
+          }
+        }
+      }
+    },
+    "Failed to Unpin" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "解除锁定失败"
+          }
+        }
+      }
+    },
+    "Failed to Update Dashboard" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新面板失败"
+          }
+        }
+      }
+    },
+    "Failed to Update Profile" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新配置失败"
+          }
+        }
+      }
+    },
+    "Generated by merging the profile, overrides, and app settings. Refreshes automatically when the core reloads." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "由配置、覆写和应用设置合并生成，内核重新加载后自动刷新"
+          }
+        }
+      }
+    },
+    "Global" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全局"
+          }
+        }
+      }
+    },
+    "Global Override" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全局覆写"
+          }
+        }
+      }
+    },
+    "Global Override…" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全局覆写…"
+          }
+        }
+      }
+    },
+    "Invalid YAML: %@" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YAML 格式错误：%@"
+          }
+        }
+      }
+    },
+    "Keep Mode" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保持模式"
+          }
+        }
+      }
+    },
+    "Keep Profile" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保持配置"
+          }
+        }
+      }
+    },
+    "Keep TUN" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保持网卡代理"
+          }
+        }
+      }
+    },
+    "Last Updated" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上次更新"
+          }
+        }
+      }
+    },
+    "Launch at Login" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开机自启"
+          }
+        }
+      }
+    },
+    "Local File" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本地文件"
+          }
+        }
+      }
+    },
+    "Location Services permission is required to read the Wi-Fi name" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "需要定位服务权限才能读取 Wi-Fi 名称"
+          }
+        }
+      }
+    },
+    "Mode" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "模式"
+          }
+        }
+      }
+    },
+    "Mode: %@" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "模式：%@"
+          }
+        }
+      }
+    },
+    "More" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更多"
+          }
+        }
+      }
+    },
+    "Move to Trash" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "移到废纸篓"
+          }
+        }
+      }
+    },
+    "Name" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名称"
+          }
+        }
+      }
+    },
+    "No Wi-Fi" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未连接 Wi-Fi"
           }
         }
       }
@@ -3472,17 +724,635 @@
             "state" : "translated",
             "value" : "没有可用的网络服务"
           }
-        },
-        "zh-Hant" : {
+        }
+      }
+    },
+    "None" : {
+      "localizations" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "沒有可用的網路服務"
+            "value" : "无"
           }
-        },
-        "ru" : {
+        }
+      }
+    },
+    "None Selected" : {
+      "localizations" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Нет активного сетевого сервиса"
+            "value" : "未选择"
+          }
+        }
+      }
+    },
+    "Not Connected" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未连接"
+          }
+        }
+      }
+    },
+    "Off" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关闭"
+          }
+        }
+      }
+    },
+    "On" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开启"
+          }
+        }
+      }
+    },
+    "Open Core Folder" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开内核目录"
+          }
+        }
+      }
+    },
+    "Open Dashboard" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开面板"
+          }
+        }
+      }
+    },
+    "Open Log…" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开日志…"
+          }
+        }
+      }
+    },
+    "Open Profiles Folder" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开配置目录"
+          }
+        }
+      }
+    },
+    "Open System Settings" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开系统设置"
+          }
+        }
+      }
+    },
+    "Other Networks" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "其他网络"
+          }
+        }
+      }
+    },
+    "Other Networks applies when no rule matches, including when not connected to Wi-Fi. “Keep” leaves the setting unchanged." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "没有匹配的规则时（包括未连接 Wi-Fi）应用“其他网络”的设置。“保持”表示不修改该项。"
+          }
+        }
+      }
+    },
+    "Override" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "覆写"
+          }
+        }
+      }
+    },
+    "Profile" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配置"
+          }
+        }
+      }
+    },
+    "Profile Info" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配置信息"
+          }
+        }
+      }
+    },
+    "Profile Info - %@" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配置信息 - %@"
+          }
+        }
+      }
+    },
+    "Profile Info…" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配置信息…"
+          }
+        }
+      }
+    },
+    "Profile Override - %@" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配置覆写 - %@"
+          }
+        }
+      }
+    },
+    "Profile Override…" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配置覆写…"
+          }
+        }
+      }
+    },
+    "Profile Updated" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配置已更新"
+          }
+        }
+      }
+    },
+    "Profile with global override applied" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "应用全局覆写后的配置"
+          }
+        }
+      }
+    },
+    "Profile with profile override applied" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "应用配置覆写后的配置"
+          }
+        }
+      }
+    },
+    "Profile: %@" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配置：%@"
+          }
+        }
+      }
+    },
+    "Proxy Groups" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "策略组"
+          }
+        }
+      }
+    },
+    "Quit" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "退出"
+          }
+        }
+      }
+    },
+    "Quit ClashLite" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "退出 ClashLite"
+          }
+        }
+      }
+    },
+    "Reload the dashboard page in your browser to use the new version." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在浏览器中重新载入面板页面即可使用新版本"
+          }
+        }
+      }
+    },
+    "Remote profiles are read-only. Use a profile override to make changes." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "远程配置为只读，如需修改请使用配置覆写"
+          }
+        }
+      }
+    },
+    "Remove Rule" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "删除规则"
+          }
+        }
+      }
+    },
+    "Required, also used as the file name" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "必填，同时作为配置文件名"
+          }
+        }
+      }
+    },
+    "Restart Core" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重启内核"
+          }
+        }
+      }
+    },
+    "Rule" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "规则"
+          }
+        }
+      }
+    },
+    "Rules" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "规则"
+          }
+        }
+      }
+    },
+    "Running" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "运行中"
+          }
+        }
+      }
+    },
+    "Runtime Config" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "运行时配置"
+          }
+        }
+      }
+    },
+    "Save" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存"
+          }
+        }
+      }
+    },
+    "Show in Finder" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在访达中显示"
+          }
+        }
+      }
+    },
+    "Starting" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "启动中"
+          }
+        }
+      }
+    },
+    "Stopped" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未运行"
+          }
+        }
+      }
+    },
+    "Subscription" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "订阅"
+          }
+        }
+      }
+    },
+    "Subscription URL" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "订阅链接"
+          }
+        }
+      }
+    },
+    "Subscription request failed (HTTP %lld)" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "订阅请求失败（HTTP %lld）"
+          }
+        }
+      }
+    },
+    "Switch by Wi-Fi" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "按 Wi-Fi 切换"
+          }
+        }
+      }
+    },
+    "Switch by Wi-Fi…" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "按 Wi-Fi 切换…"
+          }
+        }
+      }
+    },
+    "Switched by Wi-Fi" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已按 Wi-Fi 切换"
+          }
+        }
+      }
+    },
+    "System Proxy" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系统代理"
+          }
+        }
+      }
+    },
+    "TUN Authorization Failed" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "网卡代理授权失败"
+          }
+        }
+      }
+    },
+    "TUN Mode" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "网卡代理"
+          }
+        }
+      }
+    },
+    "TUN Off" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关闭网卡代理"
+          }
+        }
+      }
+    },
+    "TUN On" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开启网卡代理"
+          }
+        }
+      }
+    },
+    "The config passed to the core can be viewed once the core is running." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "内核运行后可查看传入内核的配置"
+          }
+        }
+      }
+    },
+    "The core exited unexpectedly" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "内核意外退出"
+          }
+        }
+      }
+    },
+    "The core will stop running after quitting." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "退出后内核将停止运行。"
+          }
+        }
+      }
+    },
+    "The name can’t be empty, start with “.”, or contain “/” or “:”" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名称不能为空，不能以“.”开头，也不能包含“/”或“:”"
+          }
+        }
+      }
+    },
+    "The override must be a YAML mapping (key: value)" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "覆写内容必须是 YAML 映射（键: 值）"
+          }
+        }
+      }
+    },
+    "The profile file will be moved to the Trash, and its profile override will be removed." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配置文件将被移到废纸篓，其配置覆写也会一并删除。"
+          }
+        }
+      }
+    },
+    "The profile is not a valid YAML mapping" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配置文件不是有效的 YAML 映射"
+          }
+        }
+      }
+    },
+    "The profile itself and the result of applying overrides are validated before saving." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存前会校验配置本身及应用覆写后的配置"
+          }
+        }
+      }
+    },
+    "The profile “%@” no longer exists" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配置“%@”已不存在"
+          }
+        }
+      }
+    },
+    "Timed out waiting for the core to respond" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "等待内核响应超时"
+          }
+        }
+      }
+    },
+    "Timeout" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "超时"
+          }
+        }
+      }
+    },
+    "Type" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "类型"
+          }
+        }
+      }
+    },
+    "Unable to Open Profile" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法打开配置"
           }
         }
       }
@@ -3494,17 +1364,215 @@
             "state" : "translated",
             "value" : "无法修改系统代理设置"
           }
-        },
-        "zh-Hant" : {
+        }
+      }
+    },
+    "Unable to move the profile to the Trash" : {
+      "localizations" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "無法修改系統代理設定"
+            "value" : "无法将配置移到废纸篓"
           }
-        },
-        "ru" : {
+        }
+      }
+    },
+    "Unable to read the profile file" : {
+      "localizations" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Не удалось изменить настройки системного прокси"
+            "value" : "无法读取配置文件"
+          }
+        }
+      }
+    },
+    "Unable to read the selected file" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法读取所选文件"
+          }
+        }
+      }
+    },
+    "Unable to run the core" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法运行内核"
+          }
+        }
+      }
+    },
+    "Unable to save the override file" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法保存覆写文件"
+          }
+        }
+      }
+    },
+    "Unable to save the profile file" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法保存配置文件"
+          }
+        }
+      }
+    },
+    "Unknown error" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未知错误"
+          }
+        }
+      }
+    },
+    "Unpin" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "解除锁定"
+          }
+        }
+      }
+    },
+    "Update Dashboard" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新面板"
+          }
+        }
+      }
+    },
+    "Update Profile" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新配置"
+          }
+        }
+      }
+    },
+    "Updating Profile…" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在更新配置…"
+          }
+        }
+      }
+    },
+    "Validating…" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在校验…"
+          }
+        }
+      }
+    },
+    "Validation failed (%@): %@" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@校验失败：%2$@"
+          }
+        }
+      }
+    },
+    "View Profile - %@" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "查看配置 - %@"
+          }
+        }
+      }
+    },
+    "View Profile…" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "查看配置…"
+          }
+        }
+      }
+    },
+    "View Runtime Config…" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "查看运行时配置…"
+          }
+        }
+      }
+    },
+    "Waiting for Location Services permission…" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在等待定位服务权限…"
+          }
+        }
+      }
+    },
+    "When the Wi-Fi network changes, apply the matching profile, TUN mode, and proxy mode, then reload the core once. macOS requires Location Services permission to read the Wi-Fi name; your location is not used." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wi-Fi 网络变化时，应用匹配的配置、网卡代理和代理模式，并只重新加载一次内核。macOS 需要定位服务权限才能读取 Wi-Fi 名称，不会使用你的位置。"
+          }
+        }
+      }
+    },
+    "Wi-Fi Name" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wi-Fi 名称"
+          }
+        }
+      }
+    },
+    "Wi-Fi “%@”" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wi-Fi“%@”"
+          }
+        }
+      }
+    },
+    "mihomo %@, %@ mode" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mihomo %1$@，%2$@模式"
           }
         }
       }

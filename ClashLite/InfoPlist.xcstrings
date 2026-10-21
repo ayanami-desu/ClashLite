@@ -4,28 +4,10 @@
     "NSLocationAlwaysAndWhenInUseUsageDescription" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "ClashLite uses Location Services only to read the Wi-Fi name for switching settings automatically by network. Your location is not used."
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ClashLite 仅使用定位服务读取 Wi-Fi 名称，以便按网络自动切换设置，不会使用你的位置。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ClashLite 僅使用定位服務讀取 Wi-Fi 名稱，以便依網路自動切換設定，不會使用你的位置。"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ClashLite использует службы геолокации только для чтения имени сети Wi-Fi, чтобы автоматически переключать настройки в зависимости от сети. Ваше местоположение не используется."
           }
         }
       }
@@ -33,28 +15,10 @@
     "NSLocationUsageDescription" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "ClashLite uses Location Services only to read the Wi-Fi name for switching settings automatically by network. Your location is not used."
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ClashLite 仅使用定位服务读取 Wi-Fi 名称，以便按网络自动切换设置，不会使用你的位置。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ClashLite 僅使用定位服務讀取 Wi-Fi 名稱，以便依網路自動切換設定，不會使用你的位置。"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ClashLite использует службы геолокации только для чтения имени сети Wi-Fi, чтобы автоматически переключать настройки в зависимости от сети. Ваше местоположение не используется."
           }
         }
       }
@@ -62,28 +26,10 @@
     "NSLocationWhenInUseUsageDescription" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "ClashLite uses Location Services only to read the Wi-Fi name for switching settings automatically by network. Your location is not used."
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ClashLite 仅使用定位服务读取 Wi-Fi 名称，以便按网络自动切换设置，不会使用你的位置。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ClashLite 僅使用定位服務讀取 Wi-Fi 名稱，以便依網路自動切換設定，不會使用你的位置。"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ClashLite использует службы геолокации только для чтения имени сети Wi-Fi, чтобы автоматически переключать настройки в зависимости от сети. Ваше местоположение не используется."
           }
         }
       }
