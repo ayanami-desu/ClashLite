@@ -76,7 +76,7 @@ jobs:
             -configuration Release \
             -derivedDataPath build/DerivedData \
             -destination "generic/platform=macOS" \
-            ARCHS="arm64 x86_64" \
+            ARCHS="arm64" \
             ONLY_ACTIVE_ARCH=NO \
             MARKETING_VERSION="$VERSION" \
             CURRENT_PROJECT_VERSION="${{ github.run_number }}" \
@@ -85,30 +85,29 @@ jobs:
             DEVELOPMENT_TEAM="" \
             build
 
-      # Intel 选 amd64-v1，兼容所有 Intel 机型
+      # alpha 是滚动预发布，资源名带提交短哈希
       - name: Download mihomo
         id: mihomo
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          TAG="$(gh release view --repo MetaCubeX/mihomo --json tagName --jq .tagName)"
+          TAG="Prerelease-Alpha"
           mkdir -p build/mihomo && cd build/mihomo
           gh release download "$TAG" --repo MetaCubeX/mihomo \
-            --pattern "mihomo-darwin-arm64-$TAG.gz" \
-            --pattern "mihomo-darwin-amd64-v1-$TAG.gz"
-          gunzip -c "mihomo-darwin-arm64-$TAG.gz" > arm64
-          gunzip -c "mihomo-darwin-amd64-v1-$TAG.gz" > amd64
-          chmod +x arm64 amd64
+            --pattern "mihomo-darwin-arm64-alpha-*.gz"
+          ARCHIVE="$(ls mihomo-darwin-arm64-alpha-*.gz)"
+          CORE="${ARCHIVE%.gz}"
+          CORE_VERSION="${CORE#mihomo-darwin-arm64-}"
+          gunzip -c "$ARCHIVE" > arm64
+          chmod +x arm64
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version=$CORE_VERSION" >> "$GITHUB_OUTPUT"
 
       # dmgbuild 直接写入 .DS_Store 来设置窗口样式，不依赖 Finder 脚本，在 CI 中更稳定
       - name: Create DMG
         run: |
           APP="build/DerivedData/Build/Products/Release/ClashLite.app"
-          # 逐个验证，兼容当前 lipo 对多个 -verify_arch 参数的解析行为。
-          for ARCH in arm64 x86_64; do
-            lipo "$APP/Contents/MacOS/ClashLite" -verify_arch "$ARCH"
-          done
+          lipo "$APP/Contents/MacOS/ClashLite" -verify_arch arm64
 
           pipx install dmgbuild
           mkdir -p build/dmg
@@ -119,106 +118,26 @@ jobs:
             dmgbuild -s dmg/settings.py -D app="$1" -D background=build/dmg/background.tiff ClashLite "$2"
           }
 
-          make_dmg "$APP" "ClashLite-$VERSION.dmg"
-
-          # 自带内核的版本按架构分别打包：内核放入 Resources，首次启动时复制到内核目录；改动了包内容，需重新签名
-          for ARCH in arm64 amd64; do
-            BUNDLED="$(mktemp -d)/ClashLite.app"
-            cp -R "$APP" "$BUNDLED"
-            cp "build/mihomo/$ARCH" "$BUNDLED/Contents/Resources/mihomo"
-            codesign --force --sign - "$BUNDLED/Contents/Resources/mihomo"
-            codesign --force --sign - --options runtime --preserve-metadata=entitlements "$BUNDLED"
-            codesign --verify --strict --verbose=2 "$BUNDLED"
-            make_dmg "$BUNDLED" "ClashLite-$VERSION-mihomo-${{ steps.mihomo.outputs.tag }}-$ARCH.dmg"
-          done
+          # 只打包 Apple 芯片 + 内置 alpha 内核；首次启动时复制到内核目录，改动了包内容，需重新签名
+          BUNDLED="$(mktemp -d)/ClashLite.app"
+          cp -R "$APP" "$BUNDLED"
+          cp "build/mihomo/arm64" "$BUNDLED/Contents/Resources/mihomo"
+          codesign --force --sign - "$BUNDLED/Contents/Resources/mihomo"
+          codesign --force --sign - --options runtime --preserve-metadata=entitlements "$BUNDLED"
+          codesign --verify --strict --verbose=2 "$BUNDLED"
+          make_dmg "$BUNDLED" "ClashLite-$VERSION-mihomo-${{ steps.mihomo.outputs.version }}-arm64.dmg"
 
       - uses: actions/upload-artifact@v7.0.2
         with:
           name: ClashLite-${{ needs.prepare.outputs.version }}
           path: "*.dmg"
-
-  # 用 Copilot CLI 结合提交、合并记录和代码改动生成更新日志；失败时不阻塞发布
-  notes:
-    needs: prepare
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: read
-    steps:
-      - uses: actions/checkout@v7.0.1
-        with:
-          fetch-depth: 0
-
-      - uses: actions/setup-node@v7.1.0
-
-      # 本次的标签还没创建，HEAD 往前最近的标签就是上一版本
-      - name: Determine range
-        id: range
-        run: |
-          PREV="$(git describe --tags --abbrev=0 --match 'v*' HEAD 2>/dev/null || true)"
-          if [[ -n "$PREV" ]]; then
-            PREV_DATE="$(git log -1 --format=%cI "$PREV")"
-          fi
-          echo "prev=$PREV" >> "$GITHUB_OUTPUT"
-          echo "prev_date=$PREV_DATE" >> "$GITHUB_OUTPUT"
-
-      - name: Generate release notes
-        continue-on-error: true
-        timeout-minutes: 15
-        env:
-          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_TOKEN }}
-          GH_TOKEN: ${{ github.token }}
-          VERSION: ${{ needs.prepare.outputs.version }}
-          PREV: ${{ steps.range.outputs.prev }}
-          PREV_DATE: ${{ steps.range.outputs.prev_date }}
-          CI: "true"
-          NO_COLOR: "1"
-        run: |
-          npm install -g @github/copilot
-          if [[ -n "$PREV" ]]; then
-            RANGE="$PREV..HEAD"
-          else
-            RANGE="HEAD"
-          fi
-
-          PROMPT="你在为 macOS 应用 ClashLite（一个 mihomo 内核的轻量图形客户端）编写 v$VERSION 版本的更新日志，比较范围是 git 区间 $RANGE。
-
-          请依次：
-          1. 用 git log $RANGE 查看提交记录；
-          2. 如果上一版本存在（$PREV，时间 $PREV_DATE），用 gh pr list --state merged --search \"merged:>$PREV_DATE\" 和 gh pr view 查看这期间合并的 PR；
-          3. 用 git diff --stat $RANGE、git diff $RANGE 和 git show 查看实际代码改动，必要时阅读相关源文件，确认每项改动对用户的实际影响，不要只照抄提交信息。
-
-          然后把更新日志写入 release-notes.md，要求：
-          - 使用简体中文，面向普通用户，描述用户能感知到的变化，不写实现细节；
-          - 按「新功能」「改进」「修复」分组，用 ### 三级标题，没有内容的分组省略；
-          - 每条一行，以 - 开头，简洁具体；
-          - 忽略纯文档、截图、CI、重构等对用户无影响的改动；
-          - 只输出更新内容本身，不要写版本号标题、下载说明或总结段落。"
-
-          copilot -p "$PROMPT" -s --no-ask-user \
-            --allow-tool='shell(git log:*)' \
-            --allow-tool='shell(git diff:*)' \
-            --allow-tool='shell(git show:*)' \
-            --allow-tool='shell(gh pr list:*)' \
-            --allow-tool='shell(gh pr view:*)' \
-            --allow-tool='read' \
-            --allow-tool='write(release-notes.md)' \
-            < /dev/null
-
-          test -s release-notes.md
-          cat release-notes.md >> "$GITHUB_STEP_SUMMARY"
-
-      - uses: actions/upload-artifact@v7.0.2
-        with:
-          name: release-notes
-          path: release-notes.md
-          if-no-files-found: ignore
+          archive: false
+          retention-days: 1
 
   # 编译通过后才提交版本号和打标签，避免失败时留下无效标签
   release:
-    needs: [prepare, build, notes]
-    # notes 失败也照常发布
-    if: always() && needs.prepare.outputs.release == 'true' && needs.build.result == 'success'
+    needs: [prepare, build]
+    if: needs.prepare.outputs.release == 'true' && needs.build.result == 'success'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -244,41 +163,20 @@ jobs:
         with:
           name: ClashLite-${{ needs.prepare.outputs.version }}
 
-      - uses: actions/download-artifact@v8.0.2
-        continue-on-error: true
-        with:
-          name: release-notes
-          path: notes
-
       - name: Compose release body
         env:
           MIHOMO: ${{ needs.build.outputs.mihomo }}
           BASE: ${{ github.server_url }}/${{ github.repository }}/releases/download/${{ env.TAG }}
         run: |
-          {
-            if [[ -s notes/release-notes.md ]]; then
-              echo "## 更新内容"
-              echo
-              cat notes/release-notes.md
-              echo
-            fi
-            cat <<EOF
+          cat > body.md <<EOF
           ## 下载
 
           **内置 mihomo $MIHOMO，下载即用（推荐）**
 
           - Apple 芯片（M 系列）：[ClashLite-$VERSION-mihomo-$MIHOMO-arm64.dmg]($BASE/ClashLite-$VERSION-mihomo-$MIHOMO-arm64.dmg)
-          - Intel 芯片：[ClashLite-$VERSION-mihomo-$MIHOMO-amd64.dmg]($BASE/ClashLite-$VERSION-mihomo-$MIHOMO-amd64.dmg)
 
-          **不含内核**
-
-          - 通用版（Apple 芯片 / Intel 均可）：[ClashLite-$VERSION.dmg]($BASE/ClashLite-$VERSION.dmg)
-
-            适合想自己管理内核版本的用户。
-
-          > 需要 macOS 15 或更高版本。
+          > 需要 macOS 15 或更高版本，仅支持 Apple 芯片。
           EOF
-          } > body.md
 
       - uses: softprops/action-gh-release@v3.0.3
         with:
