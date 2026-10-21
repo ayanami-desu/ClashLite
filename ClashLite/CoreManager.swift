@@ -56,6 +56,13 @@ final class CoreManager {
         }
     }
 
+    /// 是否把系统代理指向内核，通过 setSystemProxyEnabled(_:) 修改
+    private(set) var isSystemProxyEnabled: Bool {
+        didSet {
+            UserDefaults.standard.set(isSystemProxyEnabled, forKey: Self.systemProxyKey)
+        }
+    }
+
     /// 内核正在使用的配置，即最近一次成功传入内核的内容
     private(set) var runtimeConfig: String?
 
@@ -86,9 +93,19 @@ final class CoreManager {
     /// 内核最近一次加载配置时的系统 DNS 服务器
     @ObservationIgnored private var loadedDNSServers: [String] = []
     @ObservationIgnored private var dnsChangeTask: Task<Void, Never>?
+    /// 内核报告的代理端口，混合端口同时服务 HTTP 和 SOCKS
+    @ObservationIgnored private var proxyPorts: ProxyPorts?
+    /// 已写入系统代理的端口，端口不变时不再重复设置
+    @ObservationIgnored private var appliedProxyPorts: ProxyPorts?
     @ObservationIgnored private static let syncInterval = Duration.seconds(3)
     @ObservationIgnored private static let modeKey = "proxyMode"
     @ObservationIgnored private static let tunKey = "tunEnabled"
+    @ObservationIgnored private static let systemProxyKey = "systemProxyEnabled"
+
+    private struct ProxyPorts: Equatable {
+        var http: Int?
+        var socks: Int?
+    }
 
     private var config: CoreConfig {
         CoreConfig(mode: mode, isTunEnabled: isTunEnabled, controller: controller)
@@ -97,6 +114,7 @@ final class CoreManager {
     init(profileStore: ProfileStore) {
         mode = UserDefaults.standard.string(forKey: Self.modeKey).flatMap(ProxyMode.init) ?? .rule
         isTunEnabled = UserDefaults.standard.bool(forKey: Self.tunKey)
+        isSystemProxyEnabled = UserDefaults.standard.bool(forKey: Self.systemProxyKey)
 
         Notifier.setUp()
 
@@ -107,11 +125,18 @@ final class CoreManager {
         ) { [weak self] _ in
             MainActor.assumeIsolated {
                 self?.process?.terminate()
+                // 异步恢复可能来不及执行，退出前同步完成
+                SystemProxy.restoreIfNeeded()
             }
         }
 
         dnsMonitor = SystemDNSMonitor { [weak self] in
             self?.systemDNSDidChange()
+        }
+
+        // 上次异常退出可能遗留了未恢复的系统代理
+        if !isSystemProxyEnabled, SystemProxy.hasBackup {
+            enqueue { await self.restoreSystemProxy() }
         }
 
         observeSelection(of: profileStore)
@@ -136,6 +161,19 @@ final class CoreManager {
         guard enabled != isTunEnabled else { return }
         isTunEnabled = enabled
         scheduleApply()
+    }
+
+    /// 打开时把系统代理指向内核端口，关闭时恢复原有设置；内核未运行时等启动后再应用
+    func setSystemProxyEnabled(_ enabled: Bool) {
+        guard enabled != isSystemProxyEnabled else { return }
+        isSystemProxyEnabled = enabled
+        enqueue {
+            if enabled {
+                await self.syncProxySettings()
+            } else {
+                await self.restoreSystemProxy()
+            }
+        }
     }
 
     /// 重新生成配置并应用，例如修改覆写之后
@@ -291,6 +329,7 @@ final class CoreManager {
     private func sync() async {
         await syncConfigs()
         await refreshProxies()
+        await applySystemProxy(notifyOnFailure: false)
     }
 
     private func syncConfigs() async {
@@ -308,6 +347,16 @@ final class CoreManager {
         if let tun = config.tun {
             self.isTunEnabled = tun.enable
         }
+        updateProxyPorts(config)
+    }
+
+    /// 混合端口优先，同时服务 HTTP 和 SOCKS；未配置混合端口时分别取各自端口
+    private func updateProxyPorts(_ config: CoreController.RuntimeConfig) {
+        let mixed = config.mixedPort.flatMap { $0 > 0 ? $0 : nil }
+        proxyPorts = ProxyPorts(
+            http: mixed ?? config.port.flatMap { $0 > 0 ? $0 : nil },
+            socks: mixed ?? config.socksPort.flatMap { $0 > 0 ? $0 : nil }
+        )
     }
 
     /// 读取策略组，内核未运行或请求失败时保持原样
@@ -343,6 +392,41 @@ final class CoreManager {
         await apply()
     }
 
+    /// 读取内核端口，开启系统代理时指向内核
+    private func syncProxySettings() async {
+        guard status == .running else { return }
+        await syncConfigs()
+        await applySystemProxy()
+    }
+
+    /// 端口变化时才重写系统代理，避免定时同步反复修改系统设置
+    private func applySystemProxy(notifyOnFailure: Bool = true) async {
+        guard isSystemProxyEnabled, status == .running, let ports = proxyPorts else { return }
+        guard let service = SystemProxy.activeServiceName else { return }
+        // 切换网络后需要把代理设到新的服务上
+        guard ports != appliedProxyPorts || service != SystemProxy.backedUpService else { return }
+        do {
+            try await SystemProxy.enable(httpPort: ports.http, socksPort: ports.socks)
+            appliedProxyPorts = ports
+        } catch {
+            NSLog("设置系统代理失败：\(error)")
+            guard notifyOnFailure else { return }
+            Notifier.post(id: "systemProxy", title: "Failed to Set System Proxy", body: error.localizedDescription)
+        }
+    }
+
+    /// 内核停止后系统代理会指向已关闭的端口，需要恢复原有设置
+    private func restoreSystemProxy() async {
+        guard appliedProxyPorts != nil || SystemProxy.hasBackup else { return }
+        appliedProxyPorts = nil
+        do {
+            try await SystemProxy.disable()
+        } catch {
+            NSLog("恢复系统代理失败：\(error)")
+            Notifier.post(id: "systemProxy", title: "Failed to Restore System Proxy", body: error.localizedDescription)
+        }
+    }
+
     /// 内核运行中则热重载，否则启动
     private func apply() async {
         guard status == .running, let profileURL else {
@@ -357,6 +441,8 @@ final class CoreManager {
             uiName = rendered.uiName
             runtimeConfig = rendered.payload
             await refreshProxies()
+            // 配置可能更换了代理端口
+            await syncProxySettings()
         } catch {
             Notifier.post(id: "core", title: "Failed to Load Config", body: error.localizedDescription)
         }
@@ -411,6 +497,7 @@ final class CoreManager {
             status = .running
             runtimeConfig = rendered.payload
             await refreshProxies()
+            await syncProxySettings()
             Notifier.post(id: "core", title: "Core Started", body: String(localized: "mihomo \(version), \(mode.title) mode"))
         } catch {
             await stop()
@@ -420,6 +507,7 @@ final class CoreManager {
     }
 
     private func stop() async {
+        await restoreSystemProxy()
         guard let process else { return }
         // 先移除引用，使退出回调忽略这次主动停止
         self.process = nil
@@ -483,6 +571,7 @@ final class CoreManager {
         guard let process, process.processIdentifier == pid, status == .running else { return }
         self.process = nil
         status = .failed
+        enqueue { await self.restoreSystemProxy() }
         Notifier.post(id: "core", title: "Core Exited", body: Self.lastLogError() ?? String(localized: "Exit code \(code)"))
     }
 

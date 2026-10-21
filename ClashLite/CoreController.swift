@@ -87,6 +87,15 @@ nonisolated struct CoreController {
         struct Tun: Decodable { var enable: Bool }
         var mode: String
         var tun: Tun?
+        var mixedPort: Int?
+        var port: Int?
+        var socksPort: Int?
+
+        private enum CodingKeys: String, CodingKey {
+            case mode, tun, port
+            case mixedPort = "mixed-port"
+            case socksPort = "socks-port"
+        }
     }
 
     /// GET /configs，读取内核当前设置（可能已被面板修改）
