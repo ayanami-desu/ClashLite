@@ -1,0 +1,33 @@
+# macOS
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+
+# Xcode
+build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM
+*.dSYM.zip
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# dmgbuild 产物
+*.dmg
+
+# Python（dmg/settings.py）
+__pycache__/
+*.py[cod]
+.venv/
+
+# CodeGraph 本地索引
+.codegraph/
