@@ -34,6 +34,7 @@ final class CoreManager {
             if status != .running {
                 proxies = [:]
                 runtimeConfig = nil
+                kernelResolvesDNS = false
             }
         }
     }
@@ -69,6 +70,9 @@ final class CoreManager {
             UserDefaults.standard.set(isSystemDNSEnabled, forKey: Self.systemDNSKey)
         }
     }
+
+    /// 内核通过 tun.dns-mode 自行配置了系统 DNS，应用不能再接管
+    private(set) var kernelResolvesDNS = false
 
     /// 内核正在使用的配置，即最近一次成功传入内核的内容
     private(set) var runtimeConfig: String?
@@ -471,9 +475,9 @@ final class CoreManager {
         }
     }
 
-    /// TUN 开启且开关打开时接管系统 DNS，否则恢复
+    /// TUN 开启、开关打开且内核未自行处理 DNS 时接管系统 DNS，否则恢复
     private func syncSystemDNS(notifyOnFailure: Bool = true) async {
-        guard isSystemDNSEnabled, isTunEnabled, status == .running else {
+        guard isSystemDNSEnabled, isTunEnabled, status == .running, !kernelResolvesDNS else {
             await restoreSystemDNS(notifyOnFailure: notifyOnFailure)
             return
         }
@@ -522,6 +526,7 @@ final class CoreManager {
             try await controller.reloadConfigs(payload: rendered.payload)
             uiName = rendered.uiName
             runtimeConfig = rendered.payload
+            kernelResolvesDNS = rendered.kernelResolvesDNS
             await refreshProxies()
             // 配置可能更换了代理端口
             await syncProxySettings()
@@ -582,6 +587,7 @@ final class CoreManager {
             let version = try await waitUntilReady(process)
             status = .running
             runtimeConfig = rendered.payload
+            kernelResolvesDNS = rendered.kernelResolvesDNS
             await refreshProxies()
             await syncProxySettings()
             await syncSystemDNS()

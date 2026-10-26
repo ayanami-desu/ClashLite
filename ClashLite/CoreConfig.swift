@@ -33,6 +33,8 @@ nonisolated struct CoreConfig {
         var payload: String
         /// 面板所在的子目录（external-ui-name）
         var uiName: String?
+        /// 内核自行配置系统 DNS（tun.dns-mode 非 disabled）
+        var kernelResolvesDNS: Bool
     }
 
     func render(profileURL: URL) throws -> Rendered {
@@ -57,7 +59,17 @@ nonisolated struct CoreConfig {
         applyTun(to: &root)
 
         let uiName = root["external-ui-name"]?.string.flatMap { $0.isEmpty ? nil : $0 }
-        return Rendered(payload: try Self.serialize(root), uiName: uiName)
+        return Rendered(
+            payload: try Self.serialize(root),
+            uiName: uiName,
+            kernelResolvesDNS: Self.kernelResolvesDNS(in: root)
+        )
+    }
+
+    /// 与内核一致：dns-mode 为空时 macOS 默认 disabled，其余非 disabled 值由内核把 TUN 地址设为系统 DNS
+    private static func kernelResolvesDNS(in root: Node.Mapping) -> Bool {
+        guard let mode = root["tun"]?.mapping?["dns-mode"]?.string else { return false }
+        return !mode.isEmpty && mode != "disabled"
     }
 
     /// 配置须为 YAML 映射

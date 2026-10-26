@@ -87,6 +87,7 @@ struct ClashLiteApp: App {
                 get: { core.isSystemDNSEnabled },
                 set: { core.setSystemDNSEnabled($0) }
             ))
+            .disabled(core.kernelResolvesDNS || core.status != .running)
 
             Divider()
 
